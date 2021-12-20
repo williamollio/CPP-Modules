@@ -1,30 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sample.class.hpp                                   :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:15:18 by wollio            #+#    #+#             */
-/*   Updated: 2021/12/17 15:36:25 by wollio           ###   ########.fr       */
+/*   Updated: 2021/12/20 21:23:34 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SAMPLE_CLASS_H
-# define SAMPLE_CLASS_H
+#ifndef PHONEBOOK_H
+# define PHONEBOOK_H
 
-class Sample {
+#include <string>
+#include <iostream>
+#include <iomanip>
 
-public :
+class Contacts {
 
-	// attribute
-	int foo;
+	private:
+		std::string	_first_name;
+		std::string	_last_name;
+		std::string	_nickname;
+		std::string	_phone_number;
+		std::string	_darkest_secret;
 
-	Sample(void);
-	~Sample(void);
+	public:
+		Contacts(void);
+		~Contacts(void);
+		void add_contacts();
+		std::string getFirst(void);
+		std::string getLast(void);
+		std::string getNick(void);
+		std::string getPhone(void);
+};
 
-	// member function
-	void bar(void);
+class Phonebook {
+
+	public:
+		Contacts contact[8];
+		Phonebook(void);
+		~Phonebook(void);
+		void search_contacts(int i);
+
 };
 
 #endif
+
+
