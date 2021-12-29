@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:15:18 by wollio            #+#    #+#             */
-/*   Updated: 2021/12/20 21:23:34 by wollio           ###   ########.fr       */
+/*   Updated: 2021/12/29 16:18:36 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstring>
 
 class Contacts {
 
@@ -43,7 +44,8 @@ class Phonebook {
 		Phonebook(void);
 		~Phonebook(void);
 		void search_contacts(int i);
-
+		void truncate(std::string first);
+		void choose(int i);
 };
 
 #endif
