@@ -11,6 +11,7 @@ OBJ = $(SRC:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean :
