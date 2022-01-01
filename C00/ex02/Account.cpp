@@ -6,7 +6,7 @@
 /*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 16:54:10 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/01 02:17:35 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/01 16:21:15 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void Account::displayStatus(void) const
 	std::cout << "index:" << this->_accountIndex;
 	std::cout << ";amount:" << this->_amount;
 	std::cout << ";deposits:" << this->_nbDeposits;
-	std::cout << ";withdrawals:" << getNbWithdrawals();
+	std::cout << ";withdrawals:" << this->_nbWithdrawals;
 	std::cout << std::endl;
 }
 
@@ -108,10 +108,11 @@ bool Account::makeWithdrawal(int withdrawal)
 	{
 		std::cout << withdrawal;
 		this->_amount -= withdrawal;
+		_totalAmount -= withdrawal;
 		std::cout << ";amount:" << this->_amount;
 		_nbWithdrawals = 1;
 		std::cout << ";nb_withdrawals:" << _nbWithdrawals;
-		_nbWithdrawals++;
+		_totalNbWithdrawals++;
 	}
 	std::cout << std::endl;
 	return (true);
