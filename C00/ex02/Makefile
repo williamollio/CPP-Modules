@@ -1,8 +1,8 @@
-NAME = job
+NAME = Account
 
-CC = c++
+CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS =
 
 SRC = tests.cpp Account.cpp
 

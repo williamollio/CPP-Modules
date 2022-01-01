@@ -14,6 +14,11 @@
 
 // std::pair
 
+// static variable in a class are shared by the object,
+// so it has to be init outside the class
+
+// static function ?
+
 int main(void)
 {
 
