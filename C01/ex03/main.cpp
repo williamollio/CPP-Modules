@@ -6,21 +6,31 @@
 /*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:08:06 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/05 14:43:53 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/05 16:08:31 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int main(void)
 {
 	{
-		Weapon famas = Weapon("famas");
-		HumanA will("will", famas);
-		will.attack();
-		famas.setType("new famas");
-		will.attack();
-	}
+		Weapon club = Weapon("crude spiked club");
 
+		HumanA bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+	{
+		Weapon club = Weapon("crude spiked club");
+
+		HumanB jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }
