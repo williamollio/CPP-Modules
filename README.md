@@ -43,3 +43,8 @@ Sample instance;
 // accessors
 // setter : set a (private) attribute (ex setFoo())
 // getter : which will be const (ex getFoo()) and used to get the value of a attribute
+
+// private and public are access specificier
+
+// namespace
+// a class is declared (class name)then defined (inside the brace)
