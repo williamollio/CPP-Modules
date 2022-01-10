@@ -48,3 +48,6 @@ Sample instance;
 
 // namespace
 // a class is declared (class name)then defined (inside the brace)
+
+// static variable in a class are shared by the object,
+// so it has to be init outside the class

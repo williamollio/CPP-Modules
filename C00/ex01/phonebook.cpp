@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:18:44 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/10 13:51:02 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/10 18:49:51 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,8 @@ void Phonebook::choose(int i)
 void Phonebook::search_contacts(int i)
 {
 	int x = 0;
+
+	// pass a flag
 
 	while (x < i)
 	{
