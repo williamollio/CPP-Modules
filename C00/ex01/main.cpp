@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:15:19 by wollio            #+#    #+#             */
-/*   Updated: 2021/12/29 16:27:27 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/10 13:37:51 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ int main(void)
 			if (i == 0)
 				std::cout << "List empty" << std::endl;
 			else
-			{
 				phonebook.search_contacts(i);
-			}
 		}
 		else if (command == "ADD")
 		{

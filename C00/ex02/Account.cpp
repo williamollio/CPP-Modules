@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Account.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 16:54:10 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/01 16:21:15 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/10 16:03:04 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,14 @@ Account::Account(int initial_deposit)
 Account::~Account(void)
 {
 	Account::_displayTimestamp();
-	_nbAccounts--;
-	this->_accountIndex = _nbAccounts;
-	std::cout << "index:" << this->_accountIndex;
-	std::cout << ";amount:" << this->_amount;
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";amount:" << checkAmount();
 	std::cout << ";closed" << std::endl;
+}
+
+int Account::checkAmount(void) const
+{
+	return (_amount);
 }
 
 int Account::getNbAccounts(void)

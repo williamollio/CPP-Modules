@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 13:39:09 by wollio            #+#    #+#             */
-/*   Updated: 2021/12/20 17:42:34 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/10 13:33:31 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int main (int argc, char **argv)
 				}
 		i++;
 		}
+		buffer[k] = '\0';
 		std::cout << buffer << std::endl;
 	}
 

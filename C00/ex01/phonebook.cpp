@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:18:44 by wollio            #+#    #+#             */
-/*   Updated: 2021/12/29 16:26:17 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/10 13:51:02 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ void Phonebook::search_contacts(int i)
 			truncate(last);
 		else
 			std::cout << std::right << std::setw(10) << last << '|';
-		if (last.length() > 10)
+		if (nick.length() > 10)
 			truncate(nick);
 		else
 			std::cout << std::right << std::setw(10) << nick << '|';
