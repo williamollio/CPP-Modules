@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:15:18 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/11 11:49:35 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/11 11:54:15 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ class Contacts {
 
 class Phonebook {
 
-	//private :
 	public:
 		int _flag;
 		Contacts contact[8];

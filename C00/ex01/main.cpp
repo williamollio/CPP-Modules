@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:15:19 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/11 11:51:15 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/11 11:55:18 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int main(void)
 		}
 		else if (command == "EXIT")
 			break;
+		else
+			std::cout << "Commands allowed : ADD, SEARCH and EXIT" << std::endl;
 		if (i == 8)
 		{
 			i = 0;
