@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:18:44 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/10 18:49:51 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/11 11:51:11 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Contacts::~Contacts(void)
 {
 }
 
-Phonebook::Phonebook(void)
+Phonebook::Phonebook(void) : _flag(0)
 {
 }
 
@@ -77,7 +77,7 @@ void Phonebook::truncate(std::string first)
 	std::cout << new_string << '|';
 }
 
-void Phonebook::choose(int i)
+void Phonebook::choose(int y)
 {
 	std::string index_temp;
 	int x = 0;
@@ -86,7 +86,7 @@ void Phonebook::choose(int i)
 	std::cout << "Index of the desired entry : ";
 	getline(std::cin, index_temp);
 	index = atoi(index_temp.c_str());
-	while (x < i)
+	while (x < y)
 	{
 		if (x == index)
 		{
@@ -105,10 +105,10 @@ void Phonebook::choose(int i)
 void Phonebook::search_contacts(int i)
 {
 	int x = 0;
-
-	// pass a flag
-
-	while (x < i)
+	int y = i;
+	if (_flag == 1)
+		y = 8;
+	while (x < y)
 	{
 		std::string first = contact[x].getFirst();
 		std::string last = contact[x].getLast();
@@ -130,6 +130,6 @@ void Phonebook::search_contacts(int i)
 		std::cout << std::endl;
 		x++;
 	}
-	choose(i);
+	choose(y);
 	return;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 15:15:19 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/10 13:37:51 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/11 11:51:15 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ int main(void)
 		}
 		else if (command == "EXIT")
 			break;
-		if (i == 7)
+		if (i == 8)
+		{
 			i = 0;
+			phonebook._flag = 1;
+		}
 	}
 	return 0;
 }
