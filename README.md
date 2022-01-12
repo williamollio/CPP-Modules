@@ -51,3 +51,6 @@ Sample instance;
 
 // static variable in a class are shared by the object,
 // so it has to be init outside the class
+
+// switch with strings :
+//Instead of switching over the string itself, switch over the result of a hash function that uses the string as input
