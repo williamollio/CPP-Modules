@@ -1,0 +1,3 @@
+all : deleting namespace std
+ex04 : rewritig with the replace class
+ex06 : add argv

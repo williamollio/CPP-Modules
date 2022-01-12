@@ -6,42 +6,39 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:23:14 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/12 10:54:26 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/12 16:49:03 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
-using namespace std;
-
 int main(int argc, char *argv[])
 {
-	if (argc != 4)
-	{
-		cout << "Error number of arguments" << endl;
-		cout << "Usage : \"path to file.txt\" \"string1\" \"string2\"" << endl;
+	Replace replace;
+
+	if (replace.inputChecker(argc))
 		return (EXIT_FAILURE);
-	}
-	fstream file;
-	file.open(argv[1], fstream::in);
+
+	std::fstream file;
+	file.open(argv[1], std::fstream::in);
 	if (file == NULL)
 	{
-		cout << "Opening of the file failed" << endl;
+		std::cout << "Opening of the file failed" << std::endl;
 		return (EXIT_FAILURE);
 	}
-	string s1 = argv[2];
-	string s2 = argv[3];
-	stringstream buffer;
+	std::string s1 = argv[2];
+	std::string s2 = argv[3];
+	std::stringstream buffer;
 	buffer << file.rdbuf();
 	file.close();
-	string s = buffer.str();
-	string new_s = "";
+	std::string s = buffer.str();
+	std::string new_s = "";
 
 	size_t pos = 0;
 	size_t prevPos = 0;
 	int i = 0;
 	pos = s.find(s1, 0);
-	while (pos != string::npos)
+	while (pos != std::string::npos)
 	{
 		new_s += s.substr(prevPos, pos - prevPos);
 		new_s += s2;
@@ -55,10 +52,10 @@ int main(int argc, char *argv[])
 	else
 		new_s = s;
 
-	string newfile = argv[1];
+	std::string newfile = argv[1];
 	newfile += ".replace";
-	ofstream ofs(newfile);
-	ofs << new_s << endl;
+	std::ofstream ofs(newfile);
+	ofs << new_s << std::endl;
 	ofs.close();
 	return (EXIT_SUCCESS);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:08:04 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/03 22:06:16 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/12 16:22:23 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #include <string>
 
 using namespace std;
-
-// a default constructor has no paramaters
 class Weapon
 {
 	private :

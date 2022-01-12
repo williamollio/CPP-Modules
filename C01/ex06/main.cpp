@@ -5,23 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/01 22:46:51 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/11 14:52:58 by wollio           ###   ########.fr       */
+/*   Created: 2022/01/12 12:15:48 by wollio            #+#    #+#             */
+/*   Updated: 2022/01/12 16:10:03 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Karen.hpp"
 
 int main(void)
 {
-	Zombie zombie1("zombie1");
-	Zombie *zombie2 = newZombie("zombie2");
-	if (!zombie2)
-	{
-		std::cout << "Allocation failed !" << std::endl;
-		return (1);
-	}
-	randomChump("zombie3");
-	delete zombie2;
-	return (0);
+	Karen karen;
+	karen.filter("DEBUG");
+	return (1);
 }

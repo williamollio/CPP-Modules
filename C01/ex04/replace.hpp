@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:22:13 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/11 16:40:02 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/12 16:43:37 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,14 @@
 #include <cstring>
 #include <fstream>
 #include <sstream>
-#include <vector>
 
 class Replace {
-
 	private:
 
 	public:
 	Replace(void);
 	~Replace(void);
+	int	inputChecker(int argc);
 };
 
 #endif

@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/01 22:46:51 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/11 14:52:58 by wollio           ###   ########.fr       */
+/*   Created: 2022/01/12 12:15:51 by wollio            #+#    #+#             */
+/*   Updated: 2022/01/12 16:00:43 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef KAREN_H
+# define KAREN_H
 
-int main(void)
-{
-	Zombie zombie1("zombie1");
-	Zombie *zombie2 = newZombie("zombie2");
-	if (!zombie2)
-	{
-		std::cout << "Allocation failed !" << std::endl;
-		return (1);
-	}
-	randomChump("zombie3");
-	delete zombie2;
-	return (0);
-}
+#include <iostream>
+#include <string>
+
+enum message {
+	DEBUG,
+	INFO,
+	WARNING,
+	ERROR
+};
+
+class Karen {
+	private :
+		void debug(void);
+		void info(void);
+		void warning(void);
+		void error(void);
+	public :
+		void filter(std::string level);
+		message hashit(std::string level);
+		Karen(void);
+		~Karen(void);
+};
+
+#endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:07:44 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/05 16:18:17 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/12 16:26:36 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define HUMANB_HPP
 
 #include "Weapon.hpp"
-
 class HumanB
 {
 

@@ -1,10 +1,10 @@
-NAME = replace
+NAME = karenFilter
 
 CC = clang++
 
 CFLAGS =
 
-SRC = main.cpp replace.cpp
+SRC = main.cpp Karen.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
