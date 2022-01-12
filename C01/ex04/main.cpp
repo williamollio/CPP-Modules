@@ -6,35 +6,13 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/05 16:23:14 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/11 18:22:44 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/12 10:54:26 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace.hpp"
 
 using namespace std;
-
-int ft_count_occ(string s, const char *del, string s1)
-{
-	int count = 0;
-	size_t pos = s.find(s1, 0);
-	while (pos != -1)
-	{
-		count++;
-		pos = s.find(s1, pos + 1);
-	}
-	return (count);
-}
-
-int ft_count_words(string s)
-{
-	int count = 1;
-	stringstream stream(s);
-	string oneWord;
-	while (stream >> oneWord)
-		count++;
-	return (count);
-}
 
 int main(int argc, char *argv[])
 {
@@ -53,44 +31,34 @@ int main(int argc, char *argv[])
 	}
 	string s1 = argv[2];
 	string s2 = argv[3];
-
 	stringstream buffer;
 	buffer << file.rdbuf();
+	file.close();
 	string s = buffer.str();
+	string new_s = "";
 
-	const char *del = " ";
-	char *s_modif = const_cast <char *>(s.c_str());
-	int count_occ = ft_count_occ(s, del, s1);
-	char *ptr = strtok(s_modif, del);
-	int count_words = ft_count_words(s);
-	char *arr[count_words];
+	size_t pos = 0;
+	size_t prevPos = 0;
 	int i = 0;
-	while (ptr != NULL)
+	pos = s.find(s1, 0);
+	while (pos != string::npos)
 	{
-		stringstream stream;
-		string ptr_string;
-		stream << ptr;
-		stream >> ptr_string;
-		if (s1 == ptr_string)
-			arr[i] = const_cast <char *>(s2.c_str());
-		else
-			arr[i] = ptr;
-		ptr = strtok(NULL, del);
+		new_s += s.substr(prevPos, pos - prevPos);
+		new_s += s2;
+		pos += s1.length();
+		prevPos = pos;
+		pos = s.find(s1, prevPos);
 		i++;
 	}
-	for (int i = 0; i < count_words ; i++)
-	{
-		cout << "arr[i]" << arr[i] << endl;
-	}
-	file.close();
-	// int dst;
-	// int dst2;
-	// ifps >> dst >> dst2;
-	// cout << "dst : " << dst << " / dst2 : " << dst2 << endl;
+	if (new_s != "")
+		new_s += s.substr(prevPos, s1.length());
+	else
+		new_s = s;
 
-	// ofstream ofs("test.out");
-	// string test = "j'aime les chats";
-	// ofs << test << endl;
-	// ofs.close();
+	string newfile = argv[1];
+	newfile += ".replace";
+	ofstream ofs(newfile);
+	ofs << new_s << endl;
+	ofs.close();
 	return (EXIT_SUCCESS);
 }
