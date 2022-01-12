@@ -1,10 +1,10 @@
-NAME = replace
+NAME = Karen
 
 CC = clang++
 
 CFLAGS =
 
-SRC = main.cpp
+SRC = main.cpp Karen.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

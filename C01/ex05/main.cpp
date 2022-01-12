@@ -6,7 +6,16 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:15:48 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/12 12:15:48 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/12 15:35:24 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Karen.hpp"
+
+int main(void)
+{
+	Karen karen;
+	karen.complain("DEBUG");
+	karen.complain("OK");
+	return (1);
+}
