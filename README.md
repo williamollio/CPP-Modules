@@ -54,3 +54,6 @@ Sample instance;
 
 // switch with strings :
 //Instead of switching over the string itself, switch over the result of a hash function that uses the string as input
+
+// C01 ex01 : the trick in this exercise is to modify the constructor because of the use of the new operator and the creation of an array of instances.
+// We actually can't pass any parameters while initializating

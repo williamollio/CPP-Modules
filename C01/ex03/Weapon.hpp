@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 18:08:04 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/12 16:22:23 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/13 12:43:06 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
 class Weapon
 {
 	private :
-		string _name;
+		std::string _name;
 	public :
-		Weapon(string str);
+		Weapon(std::string str);
 		~Weapon(void);
-		const string &getType(void);
-		void setType(string str);
+		const std::string &getType(void);
+		void setType(std::string str);
 };
 
 #endif

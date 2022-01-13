@@ -2,7 +2,7 @@ NAME = weapon
 
 CC = clang++
 
-CFLAGS =
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 

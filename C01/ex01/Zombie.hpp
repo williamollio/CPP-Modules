@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:23:41 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/02 21:25:36 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/13 12:16:39 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 class Zombie
 {
 	public :
-
 		Zombie(void);
 		~Zombie(void);
 		void announce(void);

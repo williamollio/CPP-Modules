@@ -3,27 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 17:55:00 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/03 18:05:56 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/13 12:39:22 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <iostream>
 
-using namespace std;
-
 int main(void)
 {
-	string str = "HI THIS IS BRAIN";
-	string *stringPTR = &str;
-	string &stringREF = str;
-	cout << "adress of the string using the variable itself : " << &str << endl;
-	cout << "adress of the string using the pointer : " << stringPTR << endl;
-	cout << "adress of the string using the reference : " << &stringREF << endl;
-	cout << "string using the pointer : " << *stringPTR << endl;
-	cout << "string using the reference : " << stringREF << endl;
+	std::string str = "HI THIS IS BRAIN";
+	std::string *stringPTR = &str;
+	std::string &stringREF = str;
+	std::cout << "adress of the string using the variable itself : " << &str << std::endl;
+	std::cout << "adress of the string using the pointer : " << stringPTR << std::endl;
+	std::cout << "adress of the string using the reference : " << &stringREF << std::endl;
+	std::cout << "string using the pointer : " << *stringPTR << std::endl;
+	std::cout << "string using the reference : " << stringREF << std::endl;
 	return (0);
 }

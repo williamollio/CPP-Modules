@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <williamollio@student.42.fr>        +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 19:23:34 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/02 11:26:22 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/13 11:44:50 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ void Zombie::announce(void)
 	std::cout << "Announce : " << this->_name << "." << std::endl;
 }
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie(std::string name) : _name(name)
 {
-	this->_name = name;
 	std::cout << "Constructor for " << this->_name << " called." << std::endl;
 }
 
