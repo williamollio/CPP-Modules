@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:15:49 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/12 15:36:39 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/14 11:07:38 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,4 @@ void Karen::complain(std::string level)
 	}
 	if (level != array[i])
 		std::cout << "Bad input" << std::endl << "Usage : DEBUG, INFO, WARNING or ERROR" << std::endl;
-
 }

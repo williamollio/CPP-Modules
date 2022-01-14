@@ -2,7 +2,7 @@ NAME = karenFilter
 
 CC = clang++
 
-CFLAGS =
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = main.cpp Karen.cpp
 

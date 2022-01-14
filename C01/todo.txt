@@ -1,4 +1,0 @@
-all : deleting namespace std
-all : deleting o files and text files
-ex04 : rewritig with the replace class
-ex06 : add argv

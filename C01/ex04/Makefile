@@ -2,7 +2,7 @@ NAME = replace
 
 CC = clang++
 
-CFLAGS =
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = main.cpp replace.cpp
 

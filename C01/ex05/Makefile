@@ -2,7 +2,7 @@ NAME = Karen
 
 CC = clang++
 
-CFLAGS =
+CFLAGS = -Wall -Wextra -Werror
 
 SRC = main.cpp Karen.cpp
 

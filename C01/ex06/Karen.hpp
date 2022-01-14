@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:15:51 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/12 16:00:43 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/14 11:40:29 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ class Karen {
 		void warning(void);
 		void error(void);
 	public :
-		void filter(std::string level);
-		message hashit(std::string level);
 		Karen(void);
 		~Karen(void);
+		void filter(std::string level);
+		message hashit(std::string level);
 };
 
 #endif

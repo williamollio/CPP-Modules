@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:22:11 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/13 19:24:32 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/01/14 10:59:16 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,35 +31,12 @@ int Replace::inputChecker(int argc)
 	return (EXIT_SUCCESS);
 }
 
-int Replace::setInfile(std::string argv)
-{
-	std::fstream file = this->_file;
-
-	file.open(argv, std::fstream::in);
-	if (file == NULL)
-	{
-		std::cout << "Opening of the file failed" << std::endl;
-		return (EXIT_FAILURE);
-	}
-	return (EXIT_SUCCESS);
-}
-
 void Replace::setString(std::string argv2, std::string argv3)
 {
 	this->_s1 = argv2;
 	this->_s2 = argv3;
 }
 
-void Replace::setBuffer(void)
-{
-	this->_buffer << this->_file.rdbuf();
-	this->_file.close();
-}
-
-std::stringstream Replace::getBuffer(void)
-{
-	return (this->_buffer);
-}
 
 std::string Replace::replaceAllOccurrence(std::string contentFile)
 {
@@ -85,12 +62,4 @@ std::string Replace::replaceAllOccurrence(std::string contentFile)
 	else
 		finalString = contentFile;
 	return (finalString);
-}
-
-std::ofstream Replace::setOutfile(std::string argv)
-{
-	std::string newfile = argv;
-	newfile += ".replace";
-	std::ofstream ofs(newfile);
-	return (ofs);
 }
