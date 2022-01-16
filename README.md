@@ -1,59 +1,50 @@
 # C++ Modules
 
+## Vocabulary
+### CPP00
 
-// send string to the standard output + \n
-std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+* <strong>::</strong> scope resolution operator
+* <strong><<</strong> insert operator
+* <strong>>></strong> extraction operator
+* <strong>namespace</strong> function or variable
+* <strong>flush</strong> means save data from a temporary buffer to permanent storage
+* <strong>std::endl</strong> add a line break and flush the stream
+* <strong>stdout/cout</strong> is line buffered that is the output doesnt get send to the OS until a newline is written or the buffer is flushed
+* <strong>std::cin</strong> (char input) read input from a buffer stream + if anything is pending for output, it's got flushed
+* <strong>constructor</strong> and <strong>destructor</strong> haven't returned value
+* a <strong>class</strong> is like a model and the <strong>instance</strong> is the dynamic part
+* <strong>member function</strong> is a function into a class
+* <strong>attribute</strong> is a variable into a class
+* Structure of a member function :
+<br><strong>type</strong> - <strong>classname</strong> - <strong>identifier</strong> - <strong>parameters</strong> <br> void Sample::bar (void)
 
-// :: scope resolution operator
-// << insert operator
-// >> extraction operator
+* Sample sample;
+<br> <strong>Sample</strong> is here the class and <strong>sample</strong> is the instance of this class created
+<br>instance variable = the Sample class has been instancied
+<br> note : an instance is a stack variable
 
-// namespace::function or variable
-// flush save data from a temporary buffer to permanent storage
-// end : \n + flush the stream
-// stdout/count is line buffered that is the output doesnt get send to the OS until a newline is written or the buffer is flushed
-// std::cin (char input): read input from a buffer stream + if anything is pending for output, it's got flushed
+* <strong>Initializer list</strong> is used to initialize the data members of a class.
+<br>Sample::Sample (char p1, int p2, float p3) : a1(p1), a2(p2), a3(p3)
+<br> a1 a2 a3 are attributes of the Sample class
 
-// constructor and destructor haven't returned value
-// a class is like a model and the instance is the dynamic part
+* make a <strong>member function as const</strong> allows a read-only and doesn't allow to modificate the state of a current instance
 
-// member function
-void bar(void);
+* convention : private members names start with _name
+* <strong>keep private as much as possible</strong> and put public only the info that the user need : what to keep internal and to expose outside
+* <strong>class vs struct</strong> : scope of class is private by default and public for the struct
 
-// attribute
-int foo;
+* accessors
+<br> setter : set a (private) attribute (ex setFoo())
+<br> getter : which will be const (ex getFoo()) and used to get the value of a attribute
 
-// type - classname - identifier - parameters
-void Sample::bar (void)
+* private and public are <strong>access specificier</strong>
 
-// instance variable = the Sample class has been instancied
-// a stack variable
-Sample instance;
+### CPP01
 
-// initialization list
-// syntax : Sample2::Sample2 (char p1, int p2, float p3) : a1(p1), a2(p2), a3(p3)
+* <strong>static variable</strong> in a class are shared by the objects,
+so it has to be init outside the class
 
-// make a member function as const, allows a read-only but doesn't allow to modificate the state of a current instance
+* <strong>switch with strings</strong> :
+Instead of switching over the string itself, switch over the result of a hash function that uses the string as input. And which return type int value for example (CPP01 ex06)
 
-// convention : private members names start with _name
-// keep private as much as possible and put public only the info that the user need : what to keep internal and to expose outside
-
-// class vs struct : scope of class is private by default and public for the struct
-
-// accessors
-// setter : set a (private) attribute (ex setFoo())
-// getter : which will be const (ex getFoo()) and used to get the value of a attribute
-
-// private and public are access specificier
-
-// namespace
-// a class is declared (class name)then defined (inside the brace)
-
-// static variable in a class are shared by the object,
-// so it has to be init outside the class
-
-// switch with strings :
-//Instead of switching over the string itself, switch over the result of a hash function that uses the string as input
-
-// C01 ex01 : the trick in this exercise is to modify the constructor because of the use of the new operator and the creation of an array of instances.
-// We actually can't pass any parameters while initializating
+### CPP02
