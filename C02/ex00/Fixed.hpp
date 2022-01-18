@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 12:07:28 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/17 12:42:19 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/18 13:01:25 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class Fixed {
 	public:
 		Fixed(void);
 		~Fixed(void);
-
-
+		Fixed (const Fixed &fixed);
+		int getRawBits (void) const;
+		void setRawBits (int const raw);
+		Fixed& operator= (const Fixed& fixed);
 };
