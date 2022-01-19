@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 12:07:28 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/19 15:52:10 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/20 00:08:29 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 #include <iostream>
 #include <cmath>
-
-using namespace std;
 
 class Fixed {
 
@@ -58,4 +56,4 @@ class Fixed {
 		static Fixed &max( Fixed &a, Fixed &b );
 };
 
-ostream& operator<< (ostream& os, const Fixed& fixed);
+std::ostream& operator<< (std::ostream& os, const Fixed& fixed);
