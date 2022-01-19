@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 12:07:28 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/18 18:55:20 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/19 15:52:10 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,19 @@ class Fixed {
 		bool operator<= (const Fixed& a);
 
 		Fixed operator+ (const Fixed& fixed);
+		Fixed operator- (const Fixed& fixed);
+		Fixed operator* (const Fixed& fixed);
+		Fixed operator/ (const Fixed& fixed);
+
+		Fixed operator++ (); // pre-increment overload
+		Fixed operator++ (int); // post-increment overload
+		Fixed operator-- (); // pre-increment overload
+		Fixed operator-- (int); // post-increment overload
+
+		static Fixed const &min( const Fixed &a, const Fixed &b ); // overload
+		static Fixed const	&max( const Fixed  &a, const Fixed &b ); // overload
+		static Fixed &min( Fixed &a, Fixed &b );
+		static Fixed &max( Fixed &a, Fixed &b );
 };
 
 ostream& operator<< (ostream& os, const Fixed& fixed);
