@@ -3,19 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 12:07:28 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/19 17:04:24 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/20 00:06:09 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
 #include <iostream>
 #include <cmath>
-
-using namespace std;
 
 class Fixed {
 
@@ -57,5 +58,6 @@ class Fixed {
 		static Fixed &max( Fixed &a, Fixed &b );
 };
 
-ostream& operator<< (ostream& os, const Fixed& fixed);
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+std::ostream& operator<< (std::ostream& os, const Fixed& fixed);
+
+#endif

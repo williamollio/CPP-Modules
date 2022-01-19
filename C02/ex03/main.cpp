@@ -3,34 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 12:07:25 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/19 17:20:51 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/20 00:04:28 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixed.hpp"
 #include "Point.hpp"
 
-int main( void )
+int main(void)
 {
-	Fixed aX(1);
-	Fixed aY(2);
-
-	Fixed bX(5);
-	Fixed bY(7);
-
-	Fixed cX(10);
-	Fixed cY(15);
-
-	Fixed pX(3);
-	Fixed pY(4);
-
-	Point A(aX, aY);
-	Point B(bX, bY);
-	Point C(cX, cY);
-	Point P(pX, pY);
-
-	return 0;
+	Point	A(0.0f, 0.0f);
+	Point	B(0.0f, 10.0f);
+	Point	C(9.0f, 5.0f);
+	Point	P(3.5f, 4.220f);
+	std::cout << bsp(A, B, C, P) << std::endl;
+	if (bsp(A, B, C, P))
+		std::cout << std::endl << "The P point is in the triangle ABC" << std::endl << std::endl;
+	else
+		std::cout << std::endl << "The P point isn't in the triangle ABC" << std::endl << std::endl;
+	return (EXIT_SUCCESS);
 }
