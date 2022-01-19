@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 12:07:26 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/18 17:29:55 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/20 00:11:50 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,37 +15,37 @@
 Fixed::Fixed(void)
 {
 	this->_fixed = 0;
-	cout << "Default constructor called" << endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int numberInt)
 {
 	this->_fixed = numberInt << _bits;
-	cout << "Int constructor called" << endl;
+	std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float numberFloat)
 {
 	this->_fixed = (int)roundf(numberFloat * (1 << this->_bits));
-	cout << "Float constructor called" << endl;
+	std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed)
 {
-	cout << "Copy constructor called" << endl;
+	std::cout << "Copy constructor called" << std::endl;
 	this->_fixed = fixed.getRawBits();
 }
 
 Fixed& Fixed::operator= (const Fixed& fixed)
 {
-	cout << "Assignation operator called" << endl;
+	std::cout << "Assignation operator called" << std::endl;
 	_fixed = fixed.getRawBits();
 	return (*this);
 }
 
 int Fixed::getRawBits(void) const
 {
-	cout << "getRawBits member function called" << endl;
+	std::cout << "getRawBits member function called" << std::endl;
 	return (_fixed);
 }
 
@@ -64,12 +64,12 @@ int Fixed::toInt(void) const
 	return (_fixed >> _bits);
 }
 
-ostream& operator<< (ostream& os, const Fixed& fixed)
+std::ostream& operator<< (std::ostream& os, const Fixed& fixed)
 {
 	return (os << fixed.toFloat());
 }
 
 Fixed::~Fixed(void)
 {
-	cout << "Destructor called" << endl;
+	std::cout << "Destructor called" << std::endl;
 }

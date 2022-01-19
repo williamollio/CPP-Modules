@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 12:07:28 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/18 17:27:51 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/20 00:11:58 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 #include <iostream>
 #include <cmath>
-
-using namespace std;
-
 class Fixed {
 
 	private:
@@ -36,4 +33,4 @@ class Fixed {
 		int toInt(void) const;
 };
 
-ostream& operator<< (ostream& os, const Fixed& fixed);
+std::ostream& operator<< (std::ostream& os, const Fixed& fixed);

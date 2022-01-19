@@ -6,11 +6,13 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRC = main.cpp Fixed.cpp
 
+HEAD = $(Fixed.hpp)
+
 OBJ = $(SRC:.cpp=.o)
 
 all : $(NAME)
 
-$(NAME) : $(SRC)
+$(NAME) : $(SRC) $(HEAD)
 	$(CC) $(CFLAGS) -c $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 

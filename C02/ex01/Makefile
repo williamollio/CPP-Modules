@@ -8,9 +8,11 @@ SRC = main.cpp Fixed.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
+HEAD = Fixed.hpp
+
 all : $(NAME)
 
-$(NAME) : $(SRC)
+$(NAME) : $(SRC) $(HEAD)
 	$(CC) $(CFLAGS) -c $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
