@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 14:22:11 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/14 10:59:16 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/01/14 14:38:35 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ std::string Replace::replaceAllOccurrence(std::string contentFile)
 		i++;
 	}
 	if (finalString != "")
-		finalString += contentFile.substr(prevPos, s1.length());
+		finalString += contentFile.substr(prevPos, contentFile.length());
 	else
 		finalString = contentFile;
 	return (finalString);
