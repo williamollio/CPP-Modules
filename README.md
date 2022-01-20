@@ -48,3 +48,19 @@ so it has to be init outside the class
 Instead of switching over the string itself, switch over the result of a hash function that uses the string as input. And which return type int value for example (CPP01 ex06)
 
 ### CPP02
+
+* Binary number = 110101
+<br> represents the value = 1 * 2^5 + 1 * 2^4 + 0 * 2^3 + 1 * 22 + 0* 2^1 + 1 * 2^0 = 53
+
+* shifting by one to the left is the same dividing the number by 2. to the right divides by 2
+* Fixed point arithmetic is a technique which can be used instead of floating point to perfom arithmetic
+  on numbers with fractional parts
+* Pros : flexibility of range/precision/data size
+* Cons : some operations are slower, some are faster, range and precision are less than floating point
+* We set the scale to set the range and the precision, usually 1/2^x (1 over 2 to the power of 16)
+* 118 = 0111 0110
+118/16 = 0111.0110 = 7.375
+118/4 = 011101.10 = 29.5
+
+* pre increment : ++x : increment x and return the new value of x
+* post increment : x++ : increment x and return the original value of x
