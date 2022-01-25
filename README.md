@@ -37,7 +37,7 @@
 <br> setter : set a (private) attribute (ex setFoo())
 <br> getter : which will be const (ex getFoo()) and used to get the value of a attribute
 
-* private and public are <strong>access specificier</strong>
+* private / protected / public are <strong>access specificiers</strong>
 
 ### CPP01
 
@@ -67,4 +67,40 @@ Instead of switching over the string itself, switch over the result of a hash fu
 
 ### CPP03
 
-*
+* Syntax of inheritance :
+```c++
+class subclass_name : access_mode base_class_name
+{
+  // body of subclass
+};
+```
+Derived class objects should be sensible specialisations of base class objects
+
+* Subclass or Derived class : the class that inherits the properties
+* Superclass or Base class : the one whose properties are inherited
+* Access specifier :
+  - protected : accessible from the class and the subclasses
+  - private : accessible only from the class itself
+  - public : accessible for everywhere
+* Access mode :
+(keep in mind that the private members are unaccessible from the child)
+  - protected : members inherited are protected
+  -  private : members inherited are private
+  - public : members inherited stay the same (public and protected)
+* "is a" and "has a" test : Inheritance or Agregation
+* Virtual base class : specify to the compiler that the base shouldn't be duplicate
+
+- With virtual keyword
+    A
+  /   \
+ B     C
+  \   /
+    D
+
+- Without virtual keyword
+
+  A   A
+  |   |
+  B   C
+   \ /
+    D
