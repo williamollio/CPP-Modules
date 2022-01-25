@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 21:22:24 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/25 20:01:51 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/01/25 20:44:54 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ClapTrap::ClapTrap(void) : Hitpoints(10), Energypoints(10), Attackdamage(0)
 {
 	this->Name = "unnamed";
-	std::cout << "Default constructor called for " << Name << " ClapTrap" << std::endl;
+	std::cout << "Default constructor called ClapTrap" << std::endl;
 }
 
 ClapTrap::ClapTrap(string name) : Name(name), Hitpoints(10), Energypoints(10), Attackdamage(0)
@@ -28,10 +28,9 @@ ClapTrap::~ClapTrap(void)
 	std::cout << "Destructor called for " << Name << " ClapTrap" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &copy)
+ClapTrap::ClapTrap(const ClapTrap &copy): Name(copy.Name), Hitpoints(copy.Hitpoints), Energypoints(copy.Energypoints), Attackdamage(copy.Attackdamage)
 {
-	*this = copy;
-	std::cout << "Copy constructor called ClapTrap" << std::endl;
+	std::cout << "Copy constructor called for " << Name << " ClapTrap" << std::endl;
 }
 
 void ClapTrap::attack(string const &target)
@@ -75,10 +74,7 @@ int ClapTrap::getAttackdamagepoints(void)
 
 ClapTrap	&ClapTrap::operator = (const ClapTrap &copy)
 {
-	Name = copy.Name;
-	Hitpoints = copy.Hitpoints;
-	Attackdamage = copy.Attackdamage;
-	Energypoints = copy.Energypoints;
 	std::cout << "Assignation operator called ClapTrap" << std::endl;
+	Name = copy.Name;
 	return (*this);
 }

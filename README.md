@@ -64,6 +64,8 @@ Instead of switching over the string itself, switch over the result of a hash fu
 
 * pre increment : ++x : increment x and return the new value of x
 * post increment : x++ : increment x and return the original value of x
+* the copy construcor is used to initialize a previously uninitialized object from some other object's data.
+* the assignement operator is used to replace the data of a previously initialized object with some other object's data.
 
 ### CPP03
 

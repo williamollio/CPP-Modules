@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 21:22:24 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/20 22:15:30 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/25 17:33:15 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,41 @@
 
 ClapTrap::ClapTrap(void) : Hitpoints(10), Energypoints(10), Attackdamage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
+	this->Name = "unnamed";
+	std::cout << "Default constructor called for " << Name << " ClapTrap" << std::endl;
 }
 
 ClapTrap::ClapTrap(string name) : Name(name), Hitpoints(10), Energypoints(10), Attackdamage(0)
 {
-	std::cout << "Parameterized constructor called for : " << Name << std::endl;
+	std::cout << "Parameterized constructor called for " << Name << " ClapTrap" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "Destructor called for " << Name << std::endl;
+	std::cout << "Destructor called for " << Name << " ClapTrap" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &copy): Name(copy.Name)
+ClapTrap::ClapTrap(const ClapTrap &copy): Name(copy.Name), Hitpoints(copy.Hitpoints), Energypoints(copy.Energypoints), Attackdamage(copy.Attackdamage)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called ClapTrap" << std::endl;
 }
 
 void ClapTrap::attack(string const &target)
 {
-	cout << "ClapTrap " << Name << " attacks " << target << " causing " << 2 << " points of damage!" << endl;
+	cout << Name << " attacks " << target << " causing " << 2 << " points of damage!" << endl;
 	this->Energypoints -= 2;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-	cout << "ClapTrap " << Name << " takes " << amount << " points of damage!" << endl;
+	cout << Name << " takes " << amount << " points of damage!" << endl;
 	this->Hitpoints -= amount;
 	this->Attackdamage += amount;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	cout << "ClapTrap " << Name << " got " << amount << " amount of points!" << endl;
+	cout << Name << " got " << amount << " amount of points!" << endl;
 	this->Hitpoints += amount;
 }
 
@@ -73,7 +74,7 @@ int ClapTrap::getAttackdamagepoints(void)
 
 ClapTrap	&ClapTrap::operator = (const ClapTrap &copy)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Assignation operator called ClapTrap" << std::endl;
 	Name = copy.Name;
 	return (*this);
 }

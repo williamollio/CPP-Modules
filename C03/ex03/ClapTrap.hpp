@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 21:22:27 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/25 16:47:30 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/01/25 16:26:25 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 using namespace std;
 class ClapTrap
 {
-	private:
+	protected:
 		string Name;
 		int Hitpoints;
 		int Energypoints;

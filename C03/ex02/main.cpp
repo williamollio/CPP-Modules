@@ -6,14 +6,14 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/20 21:21:59 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/25 20:04:23 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/01/25 19:59:15 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-void printValues (ScavTrap &x)
+void printValues (FragTrap &x)
 {
 	cout << "The "<< x.getName() << " has " << x.getHitpoints() << " Hitpoints "
 	<< x.getEnergypoints() << " Energy points and " << x.getAttackdamagepoints() << " Attack damage received !" << endl;
@@ -21,21 +21,19 @@ void printValues (ScavTrap &x)
 
 int main(void)
 {
-	ScavTrap A ("A");
-	//ScavTrap B ("B");
-	ScavTrap C = A;
-	//ScavTrap D = B;
+	FragTrap A ("A");
+	FragTrap B ("B");
+	FragTrap D = B;
 
+	printValues(D);
+
+	A.attack(B.getName());
+	B.takeDamage(5);
 	A.beRepaired(3);
-	printValues(C);
-	//printValues(D);
 
-	// A.attack(B.getName());
-	// B.takeDamage(5);
+	printValues(A);
+	printValues(B);
 
-	// printValues(A);
-	// printValues(B);
-
-	// A.guardGuate();
+	A.highFivesGuys();
 	return 1;
 }
