@@ -12,7 +12,7 @@
 
 #include "DiamondTrap.hpp"
 
-void printValues (FragTrap &x)
+void printValues (DiamondTrap &x)
 {
 	cout << "The "<< x.getName() << " has " << x.getHitpoints() << " Hitpoints "
 	<< x.getEnergypoints() << " Energy points and " << x.getAttackdamagepoints() << " Attack damage received !" << endl;
@@ -20,19 +20,20 @@ void printValues (FragTrap &x)
 
 int main(void)
 {
-	FragTrap A ("A");
-	FragTrap B ("B");
-	FragTrap D = B;
+	DiamondTrap A ("A");
+	A.whoAmI();
+	// FragTrap B ("B");
+	// FragTrap D = B;
 
-	printValues(D);
+	// printValues(A);
 
-	A.attack(B.getName());
-	B.takeDamage(5);
-	A.beRepaired(3);
+	// A.attack(B.getName());
+	// B.takeDamage(5);
+	// A.beRepaired(3);
 
-	printValues(A);
-	printValues(B);
+	// printValues(A);
+	// printValues(B);
 
-	A.highFivesGuys();
+	// A.highFivesGuys();
 	return 1;
 }

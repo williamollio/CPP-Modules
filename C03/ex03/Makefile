@@ -2,13 +2,13 @@ NAME = DiamondTrap
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 
-SRC = main.cpp FragTrap.cpp DiamondTrap.cpp ScavTrap.cpp
+SRC = main.cpp FragTrap.cpp DiamondTrap.cpp ScavTrap.cpp ClapTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD = FragTrap.hpp DiamondTrap.hpp ScavTrap.hpp
+HEAD = FragTrap.hpp DiamondTrap.hpp ScavTrap.hpp ClapTrap.hpp
 
 all : $(NAME)
 
