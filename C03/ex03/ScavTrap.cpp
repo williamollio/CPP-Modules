@@ -14,6 +14,10 @@
 
 ScavTrap::ScavTrap(void)
 {
+	Name = "unnamed";
+	Hitpoints = 100;
+	Energypoints = 50;
+	Attackdamage = 20;
 	std::cout << "Default constructor called ScavTrap" << std::endl;
 }
 

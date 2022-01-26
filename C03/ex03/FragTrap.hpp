@@ -18,8 +18,6 @@
 
 class FragTrap : public virtual ClapTrap
 {
-	private:
-		/*private members*/
 	public:
 		FragTrap(void);
 		FragTrap(string name);

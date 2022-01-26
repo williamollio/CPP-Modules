@@ -15,6 +15,9 @@
 FragTrap::FragTrap(void)
 {
 	Name = "unnamed";
+	Hitpoints = 100;
+	Energypoints = 100;
+	Attackdamage = 30;
 	std::cout << "Default constructor called FragTrap" << std::endl;
 }
 

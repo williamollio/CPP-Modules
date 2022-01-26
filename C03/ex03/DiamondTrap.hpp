@@ -20,7 +20,7 @@
 class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
-		string name;
+		string Name;
 	public:
 		DiamondTrap(void);
 		DiamondTrap(string Name);

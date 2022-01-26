@@ -22,18 +22,8 @@ int main(void)
 {
 	DiamondTrap A ("A");
 	A.whoAmI();
-	// FragTrap B ("B");
-	// FragTrap D = B;
-
-	// printValues(A);
-
-	// A.attack(B.getName());
-	// B.takeDamage(5);
-	// A.beRepaired(3);
-
-	// printValues(A);
-	// printValues(B);
-
-	// A.highFivesGuys();
+	printValues(A);
+	A.attack("B");
+	A.highFivesGuys();
 	return 1;
 }
