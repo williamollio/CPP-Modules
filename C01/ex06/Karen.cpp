@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Karen.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 12:15:49 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/14 11:45:11 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/01/27 12:44:41 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ message Karen::hashit(std::string level)
 void Karen::filter(std::string level)
 {
 	typedef void(Karen::*func)();
-	std::string array[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	func a[] = {&Karen::debug , &Karen::info , &Karen::warning , &Karen::error};
 
 	switch (hashit(level))

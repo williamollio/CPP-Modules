@@ -106,3 +106,12 @@ Derived class objects should be sensible specialisations of base class objects
   B   C
    \ /
     D
+
+### CPP04
+
+* declaration of a function : write prototype of a function in a class
+* definition of a function : write the function itself
+* virtual member function or method :  member function which is declared within a base class and is re-defined (overridden) by a derived class.
+* abstract class
+* Deep copy :
+* Shadow copy :

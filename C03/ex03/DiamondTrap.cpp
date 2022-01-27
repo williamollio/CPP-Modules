@@ -3,14 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 20:49:18 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/01/25 20:52:30 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/01/27 12:24:59 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
+
+void DiamondTrap::init(std::string name){
+	FragTrap frag;
+	ScavTrap scav;
+	Name = name;
+	ClapTrap::Name = Name + "_clap_name";
+	Hitpoints = frag.getHitpoints();
+	Energypoints = scav.getEnergypoints();
+	Attackdamage = frag.getAttackdamagepoints();
+}
+
+DiamondTrap::DiamondTrap(string name)
+{
+	init(name);
+	std::cout << "Parameterized constructor called DiamondTrap" << std::endl;
+}
 
 DiamondTrap::DiamondTrap(void)
 {
@@ -22,15 +38,7 @@ DiamondTrap::DiamondTrap(void)
 	std::cout << "Default constructor called DiamondTrap" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(string name)
-{
-	Name = name;
-	ClapTrap::Name = Name + "_clap_name";
-	Hitpoints = 100;
-	Energypoints = 50;
-	Attackdamage = 30;
-	std::cout << "Parameterized constructor called DiamondTrap" << std::endl;
-}
+
 
 DiamondTrap::~DiamondTrap(void)
 {

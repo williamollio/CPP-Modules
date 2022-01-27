@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 21:21:59 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 11:46:58 by wollio           ###   ########.fr       */
+/*   Created: 2022/01/27 10:37:29 by wollio            #+#    #+#             */
+/*   Updated: 2022/01/27 10:56:18 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-void printValues (DiamondTrap &x)
-{
-	cout << "The "<< x.getName() << " has " << x.getHitpoints() << " Hitpoints "
-	<< x.getEnergypoints() << " Energy points and " << x.getAttackdamagepoints() << " Attack damage received !" << endl;
-}
+# include <iostream>
+# include <cstring>
 
-int main(void)
+class Animal
 {
-	DiamondTrap A ("A");
-	A.whoAmI();
-	printValues(A);
-	A.attack("B");
-	A.highFivesGuys();
-	return 1;
-}
+	protected:
+		std::string type;
+		void makeSound();
+		std::string getType();
+	public:
+		Animal(void);
+		~Animal(void);
+		Animal(const Animal &copy);
+
+		Animal	&operator = (const Animal &copy);
+};
+
+#endif

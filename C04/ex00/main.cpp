@@ -5,25 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 21:21:59 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 11:46:58 by wollio           ###   ########.fr       */
+/*   Created: 2022/01/27 10:37:31 by wollio            #+#    #+#             */
+/*   Updated: 2022/01/27 10:54:00 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+# include "Animal.hpp" //
+# include "Dog.hpp"
+# include "Cat.hpp"
 
-void printValues (DiamondTrap &x)
+int main()
 {
-	cout << "The "<< x.getName() << " has " << x.getHitpoints() << " Hitpoints "
-	<< x.getEnergypoints() << " Energy points and " << x.getAttackdamagepoints() << " Attack damage received !" << endl;
-}
-
-int main(void)
-{
-	DiamondTrap A ("A");
-	A.whoAmI();
-	printValues(A);
-	A.attack("B");
-	A.highFivesGuys();
-	return 1;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound! j->makeSound();
+	meta->makeSound();
+	return 0;
 }

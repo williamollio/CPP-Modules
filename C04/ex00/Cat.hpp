@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/20 21:21:59 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 11:46:58 by wollio           ###   ########.fr       */
+/*   Created: 2022/01/27 10:37:27 by wollio            #+#    #+#             */
+/*   Updated: 2022/01/27 10:55:50 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "DiamondTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-void printValues (DiamondTrap &x)
-{
-	cout << "The "<< x.getName() << " has " << x.getHitpoints() << " Hitpoints "
-	<< x.getEnergypoints() << " Energy points and " << x.getAttackdamagepoints() << " Attack damage received !" << endl;
-}
+# include <iostream>
+# include "Animal.hpp"
 
-int main(void)
+class Cat : public Animal
 {
-	DiamondTrap A ("A");
-	A.whoAmI();
-	printValues(A);
-	A.attack("B");
-	A.highFivesGuys();
-	return 1;
-}
+	private:
+		/*private members*/
+	public:
+		Cat(void);
+		~Cat(void);
+		Cat(const Cat &copy);
+
+		Cat	&operator = (const Cat &copy);
+};
+
+#endif
