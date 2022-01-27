@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 20:49:24 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/01/27 11:50:58 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/27 16:23:16 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		DiamondTrap	&operator = (const DiamondTrap &copy);
 		void attack(std::string const & target);
 		void whoAmI();
-		void init(std::string name);
+		void init();
 };
 
 #endif

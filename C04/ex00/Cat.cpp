@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 10:37:26 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 10:56:07 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/27 16:52:47 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 Cat::Cat(void)
 {
 	type = "Cat";
-	std::cout << "Constructor called" << std::endl;
+	std::cout << "Constructor called for " << type << std::endl;
 }
 
 Cat::~Cat(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called for " << type << std::endl;
 }
 
 Cat::Cat(const Cat &copy)
@@ -31,10 +31,12 @@ Cat::Cat(const Cat &copy)
 
 Cat	&Cat::operator = (const Cat &copy)
 {
+	type = copy.type;
 	std::cout << "Assignation operator called" << std::endl;
+	return (*this);
 }
 
-// std::string Cat::getType()
-// {
-// 	return (this->type);
-// }
+void Cat::makeSound() const
+{
+	std::cout << "Cat is doing the sound" << std::endl;
+}

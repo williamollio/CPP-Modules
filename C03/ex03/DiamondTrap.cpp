@@ -6,16 +6,17 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 20:49:18 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/01/27 12:24:59 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/27 16:23:09 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-void DiamondTrap::init(std::string name){
+void DiamondTrap::init()
+{
 	FragTrap frag;
 	ScavTrap scav;
-	Name = name;
+
 	ClapTrap::Name = Name + "_clap_name";
 	Hitpoints = frag.getHitpoints();
 	Energypoints = scav.getEnergypoints();
@@ -24,17 +25,15 @@ void DiamondTrap::init(std::string name){
 
 DiamondTrap::DiamondTrap(string name)
 {
-	init(name);
+	Name = name;
+	init();
 	std::cout << "Parameterized constructor called DiamondTrap" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(void)
 {
 	Name = "unnamed";
-	ClapTrap::Name = Name + "_clap_name";
-	Hitpoints = FragTrap::Hitpoints;
-	Energypoints = ScavTrap::Energypoints;
-	Attackdamage = FragTrap::Attackdamage;
+	init();
 	std::cout << "Default constructor called DiamondTrap" << std::endl;
 }
 

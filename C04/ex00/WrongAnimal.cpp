@@ -1,42 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 10:37:21 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 16:52:41 by wollio           ###   ########.fr       */
+/*   Created: 2022/01/27 17:03:50 by wollio            #+#    #+#             */
+/*   Updated: 2022/01/27 17:14:31 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 
-Dog::Dog(void)
+WrongAnimal::WrongAnimal(void) : type ("WrongAnimal")
 {
-	type = "Dog";
 	std::cout << "Constructor called for " << type << std::endl;
 }
 
-Dog::~Dog(void)
+WrongAnimal::~WrongAnimal(void)
 {
 	std::cout << "Destructor called for " << type << std::endl;
 }
 
-Dog::Dog(const Dog &copy)
+WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
-Dog	&Dog::operator = (const Dog &copy)
+WrongAnimal	&WrongAnimal::operator = (const WrongAnimal &copy)
 {
-	type = copy.type;
 	std::cout << "Assignation operator called" << std::endl;
+	type = copy.type;
 	return (*this);
 }
 
-void Dog::makeSound() const
+void WrongAnimal::makeSound() const
 {
-	std::cout << "Dog is doing the sound" << std::endl;
+	std::cout << "WrongAnimal is doing the sound" << std::endl;
+}
+
+std::string WrongAnimal::getType() const
+{
+	return (type);
 }

@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 10:37:27 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 10:55:50 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/27 16:50:02 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cat : public Animal
 		Cat(void);
 		~Cat(void);
 		Cat(const Cat &copy);
-
+		void makeSound() const;
 		Cat	&operator = (const Cat &copy);
 };
 

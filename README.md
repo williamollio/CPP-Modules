@@ -115,3 +115,8 @@ Derived class objects should be sensible specialisations of base class objects
 * abstract class
 * Deep copy :
 * Shadow copy :
+* Virtual function, binded at runtime
+* Non-virtual function, binded at compile time
+* Late binding (Runtime) is done in accordance with the content of pointer (i.e. location pointed to by pointer)
+* Early binding (Compile time) is done according to the type of pointer
+* Note : functions are automatically considered as virtual functions in the derived class.
