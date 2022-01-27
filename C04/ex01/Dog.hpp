@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 20:49:24 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/01/27 17:29:00 by wollio           ###   ########.fr       */
+/*   Created: 2022/01/27 10:37:22 by wollio            #+#    #+#             */
+/*   Updated: 2022/01/27 17:49:17 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-# include <iostream>
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class Dog : public Animal
 {
 	private:
-		string Name;
+		Brain *brain;
 	public:
-		DiamondTrap(void);
-		DiamondTrap(string Name);
-		~DiamondTrap(void);
-		DiamondTrap(const DiamondTrap &copy);
-		DiamondTrap	&operator = (const DiamondTrap &copy);
-		void attack(std::string const & target);
-		void whoAmI();
-		void init();
+		Dog(void);
+		~Dog(void);
+		Dog(const Dog &copy);
+		void makeSound() const;
+		Dog	&operator = (const Dog &copy);
 };
 
 #endif

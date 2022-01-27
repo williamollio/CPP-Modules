@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 20:49:24 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/01/27 17:29:00 by wollio           ###   ########.fr       */
+/*   Created: 2022/01/27 10:37:29 by wollio            #+#    #+#             */
+/*   Updated: 2022/01/27 17:48:05 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
 # include <iostream>
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+# include <cstring>
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class Animal
 {
-	private:
-		string Name;
+	protected:
+		std::string type;
 	public:
-		DiamondTrap(void);
-		DiamondTrap(string Name);
-		~DiamondTrap(void);
-		DiamondTrap(const DiamondTrap &copy);
-		DiamondTrap	&operator = (const DiamondTrap &copy);
-		void attack(std::string const & target);
-		void whoAmI();
-		void init();
+		virtual void makeSound() const;
+		std::string getType() const;
+		Animal(void);
+		virtual ~Animal(void);
+		Animal(const Animal &copy);
+
+		Animal	&operator = (const Animal &copy);
 };
 
 #endif

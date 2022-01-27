@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 20:49:24 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/01/27 17:29:00 by wollio           ###   ########.fr       */
+/*   Created: 2022/01/27 17:46:14 by wollio            #+#    #+#             */
+/*   Updated: 2022/01/27 17:48:34 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-# define DIAMONDTRAP_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include <iostream>
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+# include "Animal.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap
+class Brain
 {
 	private:
-		string Name;
+		std::string ideas[100];
 	public:
-		DiamondTrap(void);
-		DiamondTrap(string Name);
-		~DiamondTrap(void);
-		DiamondTrap(const DiamondTrap &copy);
-		DiamondTrap	&operator = (const DiamondTrap &copy);
-		void attack(std::string const & target);
-		void whoAmI();
-		void init();
+		Brain(void);
+		~Brain(void);
+		Brain(const Brain &copy);
+
+		Brain	&operator = (const Brain &copy);
 };
 
 #endif

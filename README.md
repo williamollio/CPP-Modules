@@ -112,11 +112,14 @@ Derived class objects should be sensible specialisations of base class objects
 * declaration of a function : write prototype of a function in a class
 * definition of a function : write the function itself
 * virtual member function or method :  member function which is declared within a base class and is re-defined (overridden) by a derived class.
-* abstract class
-* Deep copy :
-* Shadow copy :
+* abstract class : has one or more pure virtual function
+* pure virtual function : virtual function not defined in the base clase, so has to be overriden
+* interface : abstract class that has only pure virtual function
 * Virtual function, binded at runtime
 * Non-virtual function, binded at compile time
 * Late binding (Runtime) is done in accordance with the content of pointer (i.e. location pointed to by pointer)
 * Early binding (Compile time) is done according to the type of pointer
 * Note : functions are automatically considered as virtual functions in the derived class.
+* shallow copy (made by copy constructor and assignement operator) : copied fields, the pointers will point to the same memory address without copying it
+* deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the fields
+
