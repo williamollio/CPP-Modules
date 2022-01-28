@@ -12,25 +12,26 @@
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : type("Animal")
+Animal::Animal(void)
 {
-	std::cout << "Constructor called for " << type << std::endl;
+	type = "Animal";
+	std::cout << "Constructor called for Animal" << std::endl;
 }
 
 Animal::~Animal(void)
 {
-	std::cout << "Destructor called for " << type << std::endl;
+	std::cout << "Destructor called for Animal"<< std::endl;
 }
 
 Animal::Animal(const Animal &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called for Animal" << std::endl;
 	*this = copy;
 }
 
 Animal	&Animal::operator = (const Animal &copy)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Assignation operator called for Animal" << std::endl;
 	this->type = copy.type;
 	return (*this);
 }

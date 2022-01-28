@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 10:37:22 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 16:49:59 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/28 16:27:16 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 class Dog : public Animal
 {
-	private:
-		/*private members*/
 	public:
 		Dog(void);
 		~Dog(void);

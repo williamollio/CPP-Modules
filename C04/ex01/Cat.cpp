@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 10:37:26 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 16:52:47 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/28 16:44:44 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,29 @@
 
 Cat::Cat(void)
 {
-	type = "Cat";
-	std::cout << "Constructor called for " << type << std::endl;
+	this->type = "Cat";
+	brain = new Brain();
+	std::cout << "Constructor called for Cat" << std::endl;
 }
 
 Cat::~Cat(void)
 {
-	std::cout << "Destructor called for " << type << std::endl;
+	delete brain;
+	std::cout << "Destructor called for Cat" << std::endl;
 }
 
 Cat::Cat(const Cat &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called for Cat" << std::endl;
 	*this = copy;
 }
 
 Cat	&Cat::operator = (const Cat &copy)
 {
-	type = copy.type;
-	std::cout << "Assignation operator called" << std::endl;
+	this->brain = new Brain();
+	this->brain = copy.brain;
+	this->type = copy.type;
+	std::cout << "Assignation operator called for Cat" << std::endl;
 	return (*this);
 }
 

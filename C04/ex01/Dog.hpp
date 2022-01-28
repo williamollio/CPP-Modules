@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 10:37:22 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 17:49:17 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/28 16:46:16 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "Animal.hpp"
 # include "Brain.hpp"
-
 class Dog : public Animal
 {
 	private:

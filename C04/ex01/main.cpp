@@ -1,38 +1,44 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 10:37:31 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 17:46:20 by wollio           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "Brain.hpp"
 
-# include "Dog.hpp"
-# include "Cat.hpp"
-# include "WrongCat.hpp"
 
 int main()
 {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
-	const WrongAnimal* w = new WrongCat();
+	Animal const	*dog = new Dog(); // virtual des
+	Animal const	*cat = new Cat();
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << w->getType() << " " << std::endl;
+	delete dog;//should not create a leak
+	delete cat;
 
-	meta->makeSound();
-	j->makeSound();
-	i->makeSound();
-	w->makeSound();
 
-	delete w;
-	delete meta;
-	delete j;
-	delete i;
-	return 0;
+	// Animal	 *animals[2];
+
+	// for (int i = 0; i < 2; i++) {
+
+	// 	if (i % 2) {
+	// 		animals[i] = new Dog();
+	// 	}
+	// 	else {
+	// 		animals[i] = new Cat();
+	// 	}
+	// }
+
+	// for (int i = 0; i < 2; i++) {
+
+	// 	delete animals[i];
+	// }
+
+	// Cat	cat1;
+	// Cat	cat2 = cat1;
+	// cat1.addidea("lol");
+	// cat1.addidea("toll");
+	// cat1.showideas();
+	// cat2.addidea("abc");
+	// cat2.addidea("d");
+	// cat2.showideas();
+	// cat1.showideas();
+
+	return (0);
 }

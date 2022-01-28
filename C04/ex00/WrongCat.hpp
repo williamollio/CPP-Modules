@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 17:04:06 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 17:06:58 by wollio           ###   ########.fr       */
+/*   Updated: 2022/01/28 16:27:03 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 class WrongCat : public WrongAnimal
 {
-	private:
-		/*private members*/
 	public:
 		WrongCat(void);
 		~WrongCat(void);

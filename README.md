@@ -112,6 +112,8 @@ Derived class objects should be sensible specialisations of base class objects
 * declaration of a function : write prototype of a function in a class
 * definition of a function : write the function itself
 * virtual member function or method :  member function which is declared within a base class and is re-defined (overridden) by a derived class.
+* override : the derived class function fully replace the base class member
+* augment : the derived class function partially replace the base class member
 * abstract class : has one or more pure virtual function
 * pure virtual function : virtual function not defined in the base clase, so has to be overriden
 * interface : abstract class that has only pure virtual function

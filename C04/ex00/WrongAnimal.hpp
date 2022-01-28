@@ -21,7 +21,7 @@ class WrongAnimal
 		std::string type;
 	public:
 		WrongAnimal(void);
-		~WrongAnimal(void);
+		virtual ~WrongAnimal(void);
 		WrongAnimal(const WrongAnimal &copy);
 		std::string getType() const;
 		void makeSound() const;
