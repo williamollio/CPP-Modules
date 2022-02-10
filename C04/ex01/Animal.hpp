@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 10:37:29 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/28 16:55:23 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/08 20:30:15 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include <cstring>
 
-// # define PRINT(__msg) (std::cout << __msg << std::endl)
+# define PRINT(__msg) (std::cout << __msg << std::endl)
 
 class Animal
 {

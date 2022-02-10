@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 10:37:22 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/28 16:46:16 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/10 16:58:12 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class Dog : public Animal
 		~Dog(void);
 		Dog(const Dog &copy);
 		void makeSound() const;
+		void addIdea(std::string idea);
+		void displayIdea();
 		Dog	&operator = (const Dog &copy);
 };
 

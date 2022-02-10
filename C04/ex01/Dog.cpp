@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 10:37:21 by wollio            #+#    #+#             */
-/*   Updated: 2022/01/27 16:52:41 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/10 16:58:33 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,14 @@ Dog	&Dog::operator = (const Dog &copy)
 void Dog::makeSound() const
 {
 	std::cout << "Dog is doing the sound" << std::endl;
+}
+
+void Dog::addIdea(std::string idea)
+{
+	this->brain->addIdea(idea);
+}
+
+void Dog::displayIdea()
+{
+	this->brain->displayIdea();
 }
