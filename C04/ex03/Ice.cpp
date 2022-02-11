@@ -1,34 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 15:34:39 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 15:38:56 by wollio           ###   ########.fr       */
+/*   Created: 2022/02/11 15:36:24 by wollio            #+#    #+#             */
+/*   Updated: 2022/02/11 16:36:50 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Ice.hpp"
 
-AMateria::AMateria(void)
+
+AMateria* Ice::clone()
+{
+	return (new Ice);
+}
+
+Ice::Ice(void)
 {
 	std::cout << "Constructor called" << std::endl;
 }
 
-AMateria::~AMateria(void)
+Ice::~Ice(void)
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
-AMateria::AMateria(const AMateria &copy)
+Ice::Ice(const Ice &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
-AMateria	&AMateria::operator = (const AMateria &copy)
+Ice	&Ice::operator = (const Ice &copy)
 {
 	std::cout << "Assignation operator called" << std::endl;
+}
+
+void Ice::use(ICharacter &target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
 }
