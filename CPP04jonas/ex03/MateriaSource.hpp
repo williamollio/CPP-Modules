@@ -3,27 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jhagedor <jhagedor@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/23 20:18:17 by jhagedor          #+#    #+#             */
-/*   Updated: 2022/01/27 15:54:52 by jhagedor         ###   ########.fr       */
+/*   Created: 2022/02/11 16:43:02 by wollio            #+#    #+#             */
+/*   Updated: 2022/02/11 16:43:21 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
+
+# include <iostream>
 # include "IMateriaSource.hpp"
 
-class MateriaSource : public IMateriaSource 
+class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria*	_inventory[4];
-
+		/*private members*/
 	public:
-		MateriaSource();
-		MateriaSource( MateriaSource const & b );
-		~MateriaSource();
+		MateriaSource(void);
+		~MateriaSource(void);
+		MateriaSource(const MateriaSource &copy);
 
-		MateriaSource	&operator=( MateriaSource const & b );
-
-		void		learnMateria( AMateria* );
-		AMateria*	createMateria( std::string const & type );
+		MateriaSource	&operator = (const MateriaSource &copy);
 };
+
+#endif

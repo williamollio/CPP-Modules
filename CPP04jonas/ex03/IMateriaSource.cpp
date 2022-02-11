@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 16:43:00 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 16:43:00 by wollio           ###   ########.fr       */
+/*   Created: 2022/02/11 16:42:19 by wollio            #+#    #+#             */
+/*   Updated: 2022/02/11 16:42:20 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "MateriaSource.hpp"
+#include "IMateriaSource.hpp"
 
-MateriaSource::MateriaSource(void)
+IMateriaSource::IMateriaSource(void)
 {
 	std::cout << "Constructor called" << std::endl;
 }
 
-MateriaSource::~MateriaSource(void)
+IMateriaSource::~IMateriaSource(void)
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
-MateriaSource::MateriaSource(const MateriaSource &copy)
+IMateriaSource::IMateriaSource(const IMateriaSource &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
 }
 
-MateriaSource	&MateriaSource::operator = (const MateriaSource &copy)
+IMateriaSource	&IMateriaSource::operator = (const IMateriaSource &copy)
 {
 	std::cout << "Assignation operator called" << std::endl;
 }
