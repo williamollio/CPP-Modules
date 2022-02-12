@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:36:24 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 16:36:50 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/11 20:25:45 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-
 AMateria* Ice::clone()
 {
-	return (new Ice);
+	Ice *clone = new Ice(*this);
+	return (clone);
 }
 
 Ice::Ice(void)

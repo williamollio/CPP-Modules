@@ -6,8 +6,6 @@
 
 class Ice : public AMateria
 {
-	private:
-		/*private members*/
 	public:
 		Ice(void);
 		~Ice(void);

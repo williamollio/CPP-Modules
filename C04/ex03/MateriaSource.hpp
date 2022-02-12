@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/11 15:34:41 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 20:25:29 by wiliamollio      ###   ########.fr       */
+/*   Created: 2022/02/11 20:02:40 by wiliamollio       #+#    #+#             */
+/*   Updated: 2022/02/11 20:14:14 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include <iostream>
+# include "IMateriaSource.hpp"
+# include "Cure.hpp"
+# include "Ice.hpp"
 
-class AMateria
+class MateriaSource : public IMateriaSource
 {
-	protected:
-	// some things
+	private:
+		AMateria *materia_src[3];
 	public:
-		AMateria(void);
-		~AMateria(void);
-		AMateria(std::string const & type);
-		std::string const & getType() const; //Returns the materia type
-		//virtual AMateria* clone() const = 0;
-		virtual void use(ICharacter& target);
-		AMateria	&operator = (const AMateria &copy);
-		AMateria(const AMateria &copy);
+		MateriaSource(void);
+		~MateriaSource(void);
+		MateriaSource(const MateriaSource &copy);
+		MateriaSource	&operator = (const MateriaSource &copy);
+		void learnMateria(AMateria* m);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif

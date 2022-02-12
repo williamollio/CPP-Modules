@@ -4,11 +4,11 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = main.cpp AMateria.cpp
+SRC = main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp MateriaSource.cpp IMateriaSource.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD = Animal.hpp Dog.hpp Cat.hpp Brain.hpp
+HEAD = AMateria.hpp Cure.hpp Ice.hpp ICharacter.hpp MateriaSource.hpp IMateriaSource.hpp
 
 all : $(NAME)
 

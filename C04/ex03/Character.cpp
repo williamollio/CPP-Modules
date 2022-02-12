@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:50:25 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 16:40:54 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/11 19:53:54 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,31 @@ std::string const &Character::getName()
 
 void Character::equip(AMateria *m)
 {
+	if (!m)
+	{
+		std::cout << "No materia to equip" << std::endl;
+		return;
+	}
 	int i = 0;
-	while (i < 4 && materia[i])
+	while (i < 3 && materia[i])
 		i++;
-	materia[i] = m;
+	if (materia[i])
+		std::cout << "Inventory full" << std::endl;
+	else
+		materia[i] = m;
 }
 
 void Character::unequip(int idx)
 {
+	if (idx < 0 || idx > 3)
+	{
+		std::cout << "Index doesn't exist" << std::endl;
+		return;
+	}
 	if (materia[idx])
 		materia[idx] = NULL;
+	else
+		std::cout << "Nothing in here to unequip" << std::endl;
 }
 
 void Character::use(int idx, ICharacter &target)

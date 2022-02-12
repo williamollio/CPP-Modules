@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:35:51 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 16:40:41 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/11 20:19:52 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,10 @@ Cure	&Cure::operator = (const Cure &copy)
 void Cure::use(ICharacter &target)
 {
 	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+}
+
+AMateria *Cure::clone()
+{
+	Cure *clone = new Cure(*this);
+	return (clone);
 }

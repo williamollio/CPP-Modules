@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:35:54 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 16:37:53 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/11 20:22:47 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 class Cure : public AMateria
 {
-	private:
-		/*private members*/
 	public:
 		Cure(void);
 		~Cure(void);
