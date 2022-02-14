@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:35:51 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/14 17:05:25 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/14 18:51:13 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 Cure::Cure(void)
 {
 	type = "cure";
-	std::cout << "Constructor called" << std::endl;
+	/* std::cout << "Constructor called" << std::endl; */
 }
 
 Cure::~Cure(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	/* std::cout << "Destructor called" << std::endl; */
 }
 
 Cure::Cure(const Cure &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	/* std::cout << "Copy constructor called" << std::endl; */
 	*this = copy;
 }
 
 Cure	&Cure::operator = (const Cure &copy)
 {
-	(void)copy;
-	std::cout << "Assignation operator called" << std::endl;
+	this->type = copy.type;
+	/* std::cout << "Assignation operator called" << std::endl; */
 	return (*this);
 }
 

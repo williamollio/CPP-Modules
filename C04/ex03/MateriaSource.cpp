@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 20:02:43 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/02/14 17:04:42 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/14 18:50:31 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,23 +41,33 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 
 MateriaSource::MateriaSource(void)
 {
-	std::cout << "Constructor called" << std::endl;
+	for (int i = 0; i < 3; i++)
+		this->materia_src[i] = NULL;
+	/* std::cout << "Constructor called" << std::endl; */
 }
 
 MateriaSource::~MateriaSource(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	for (int i = 0; i < 3; i++)
+		delete this->materia_src[i];
+	/* std::cout << "Destructor called" << std::endl; */
 }
 
 MateriaSource::MateriaSource(const MateriaSource &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	/* std::cout << "Copy constructor called" << std::endl; */
 	*this = copy;
 }
 
 MateriaSource	&MateriaSource::operator = (const MateriaSource &copy)
 {
-	(void)copy;
-	std::cout << "Assignation operator called" << std::endl;
+	for (int i = 0; i < 3; i++)
+	{
+		if (this->materia_src[i])
+			delete this->materia_src[i];
+		this->materia_src[i] = copy.materia_src[i];
+		this->materia_src[i] = NULL;
+	}
+	/* std::cout << "Assignation operator called" << std::endl; */
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:50:25 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/14 17:09:26 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/14 18:51:45 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,41 @@
 
 Character::Character(void) : _name("unamed")
 {
-	std::cout << "Default constructor called" << std::endl;
+	for (int i = 0; i < 3; i++)
+		this->materia[i] = NULL;
+	/* std::cout << "Default constructor called" << std::endl; */
 }
 
 Character::Character(std::string name) : _name(name)
 {
-	std::cout << "Constructor called for " << _name << std::endl;
+	for (int i = 0; i < 3; i++)
+		this->materia[i] = NULL;
+	/* std::cout << "Constructor called for " << _name << std::endl; */
 }
 
 Character::~Character(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	for (int i = 0; i < 3; i++)
+		delete this->materia[i];
+	/* std::cout << "Destructor called" << std::endl; */
 }
 
 Character::Character(const Character &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	/* std::cout << "Copy constructor called" << std::endl; */
 	*this = copy;
 }
 
 Character	&Character::operator = (const Character &copy)
 {
-	(void) copy;
-	std::cout << "Assignation operator called" << std::endl;
+	for (int i = 0; i < 3; i++)
+	{
+		if (this->materia[i])
+			delete this->materia[i];
+		this->materia[i] = copy.materia[i];
+		this->materia[i] = NULL;
+	}
+	/* std::cout << "Assignation operator called" << std::endl; */
 	return (*this);
 }
 

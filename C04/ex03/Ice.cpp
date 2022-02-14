@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:36:24 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/14 17:05:15 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/14 18:50:54 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,24 +21,25 @@ AMateria* Ice::clone() const
 Ice::Ice(void)
 {
 	type = "ice";
-	std::cout << "Constructor called" << std::endl;
+	/* std::cout << "Constructor called" << std::endl; */
 }
 
 Ice::~Ice(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	/* std::cout << "Destructor called" << std::endl; */
 }
 
 Ice::Ice(const Ice &copy)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	this->type = copy.type;
+	/* std::cout << "Copy constructor called" << std::endl; */
 	*this = copy;
 }
 
 Ice	&Ice::operator = (const Ice &copy)
 {
 	(void)copy;
-	std::cout << "Assignation operator called" << std::endl;
+	/* std::cout << "Assignation operator called" << std::endl; */
 	return (*this);
 }
 

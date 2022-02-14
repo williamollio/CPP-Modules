@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 20:02:40 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/02/11 20:14:14 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/02/14 18:46:19 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
