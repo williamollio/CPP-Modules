@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:50:25 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/14 18:51:45 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/14 19:14:32 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,9 @@ Character	&Character::operator = (const Character &copy)
 {
 	for (int i = 0; i < 3; i++)
 	{
+		delete this->materia[i];
 		if (this->materia[i])
-			delete this->materia[i];
-		this->materia[i] = copy.materia[i];
-		this->materia[i] = NULL;
+			this->materia[i] = copy.materia[i]->clone();
 	}
 	/* std::cout << "Assignation operator called" << std::endl; */
 	return (*this);
