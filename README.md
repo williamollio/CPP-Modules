@@ -124,4 +124,5 @@ Derived class objects should be sensible specialisations of base class objects
 * Note : functions are automatically considered as virtual functions in the derived class.
 * shallow copy (made by copy constructor and assignement operator) : copied fields, the pointers will point to the same memory address without copying it
 * deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the fields
-
+* forward declaration : also called a incomplete type
+* Virtual destructor are needed when Base *b = new Derived();
