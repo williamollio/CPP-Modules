@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 20:02:43 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/02/14 19:14:58 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/14 19:16:37 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ MateriaSource	&MateriaSource::operator = (const MateriaSource &copy)
 	for (int i = 0; i < 3; i++)
 	{
 		delete this->materia_src[i];
-		if (copy.ksmateria_src[i])
+		if (copy.materia_src[i])
 			this->materia_src[i] = copy.materia_src[i]->clone();
 	}
 	/* std::cout << "Assignation operator called" << std::endl; */
