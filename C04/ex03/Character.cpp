@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:50:25 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 19:53:54 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/02/14 17:09:26 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ Character::Character(const Character &copy)
 
 Character	&Character::operator = (const Character &copy)
 {
+	(void) copy;
 	std::cout << "Assignation operator called" << std::endl;
+	return (*this);
 }
 
-std::string const &Character::getName()
+std::string const &Character::getName() const
 {
 	return (_name);
 }

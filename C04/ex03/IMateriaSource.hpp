@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 20:02:45 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/02/11 20:02:46 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/02/14 17:07:30 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,12 @@
 # include <iostream>
 # include "AMateria.hpp"
 
+# define PRINT(__msg) (std::cout << __msg << std::endl)
+
 class IMateriaSource
 {
 	public:
-		virtual ~IMateriaSource() {}
+		virtual ~IMateriaSource() {};
 		virtual void learnMateria(AMateria*) = 0;
 		virtual AMateria* createMateria(std::string const & type) = 0;
 };

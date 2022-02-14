@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:35:54 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 20:22:47 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/02/14 17:05:30 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Cure : public AMateria
 		Cure(void);
 		~Cure(void);
 		Cure(const Cure &copy);
-		AMateria* clone();
+		AMateria* clone() const;
 		Cure	&operator = (const Cure &copy);
 		void use(ICharacter &target);
 };

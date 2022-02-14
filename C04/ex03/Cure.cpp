@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:35:51 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 20:19:52 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/02/14 17:05:25 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Cure::Cure(void)
 {
+	type = "cure";
 	std::cout << "Constructor called" << std::endl;
 }
 
@@ -30,7 +31,9 @@ Cure::Cure(const Cure &copy)
 
 Cure	&Cure::operator = (const Cure &copy)
 {
+	(void)copy;
 	std::cout << "Assignation operator called" << std::endl;
+	return (*this);
 }
 
 void Cure::use(ICharacter &target)
@@ -38,7 +41,7 @@ void Cure::use(ICharacter &target)
 	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 }
 
-AMateria *Cure::clone()
+AMateria *Cure::clone() const
 {
 	Cure *clone = new Cure(*this);
 	return (clone);

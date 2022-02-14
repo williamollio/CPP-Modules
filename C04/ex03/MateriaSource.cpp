@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 20:02:43 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/02/11 20:26:38 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/02/14 17:04:42 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,18 @@ void MateriaSource::learnMateria(AMateria *m)
 
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
-	if (type == "cure")
-		return (new Cure()); // use clone function
-	else if (type == "ice")
-		return (new Ice());
-	else
+	int i = 0;
+	while (materia_src[i] && i < 3)
 	{
-		std::cout << "Type unknown" << std::endl;
-		return (0);
+		if (type == materia_src[i]->getType())
+			return (materia_src[i]->clone());
+		i++;
 	}
+	if (i == 0)
+		std::cout << "No materias stored" << std::endl;
+	else
+		std::cout << "Type unknown" << std::endl;
+	return (0);
 }
 
 MateriaSource::MateriaSource(void)
@@ -54,6 +57,7 @@ MateriaSource::MateriaSource(const MateriaSource &copy)
 
 MateriaSource	&MateriaSource::operator = (const MateriaSource &copy)
 {
+	(void)copy;
 	std::cout << "Assignation operator called" << std::endl;
 	return (*this);
 }

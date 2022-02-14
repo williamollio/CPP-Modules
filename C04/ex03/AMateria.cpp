@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 15:34:39 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/11 15:38:56 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/14 17:18:13 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,17 @@ AMateria::AMateria(const AMateria &copy)
 
 AMateria	&AMateria::operator = (const AMateria &copy)
 {
+	(void) copy;
 	std::cout << "Assignation operator called" << std::endl;
+	return (*this);
+}
+
+std::string const & AMateria::getType() const
+{
+	return (type);
+}
+
+void AMateria::use(ICharacter &target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << "*" << std::endl;
 }
