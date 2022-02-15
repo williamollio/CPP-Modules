@@ -126,3 +126,7 @@ Derived class objects should be sensible specialisations of base class objects
 * deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the fields
 * forward declaration : also called a incomplete type
 * Virtual destructor are needed when Base *b = new Derived();
+
+### CPP05
+
+* Exception handling : exceptions are run-time anomalies or abnormal conditions that a program encounters during its execution

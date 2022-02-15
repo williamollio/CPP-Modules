@@ -4,11 +4,11 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = *.cpp
+SRC = main.cpp Bureaucrat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD = *.hpp
+HEAD = Bureaucrat.cpp
 
 all : $(NAME)
 
