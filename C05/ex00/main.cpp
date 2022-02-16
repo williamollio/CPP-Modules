@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:09:39 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/15 19:30:49 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/16 11:37:05 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,34 @@
 
 int main(void)
 {
+	std::cout << "First test\n";
 	try
 	{
-		Bureaucrat test("1", 33);
-		Bureaucrat test1(test);
-		if (test.getGrade() > 20)
-			throw std::invalid_argument("just for fun");
+		Bureaucrat test1("1", 400);
 	}
 	catch (std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
+	std::cout << "Second test\n";
+	try
+	{
+		Bureaucrat test2("2", 0);
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	std::cout << "Third test\n";
+	try
+	{
+		Bureaucrat test3("3", 50);
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
 	return (0);
 }
