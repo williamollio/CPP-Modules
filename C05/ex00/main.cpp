@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:09:39 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/16 11:37:05 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/16 12:03:36 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
 	{
 		std::cerr << e.what() << std::endl;
 	}
-	std::cout << "Second test\n";
+	std::cout << "\nSecond test\n";
 	try
 	{
 		Bureaucrat test2("2", 0);
@@ -33,7 +33,7 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << "Third test\n";
+	std::cout << "\nThird test\n";
 	try
 	{
 		Bureaucrat test3("3", 50);

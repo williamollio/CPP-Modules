@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:51:23 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/15 19:10:40 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/16 12:03:16 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Bureaucrat::Bureaucrat(void) : _name("unnamed"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
+	std::cout << *this;
 	if (_grade > 150)
 		throw GradeTooLowException();
 	else if (_grade < 1)

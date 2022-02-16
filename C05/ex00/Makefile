@@ -1,4 +1,4 @@
-NAME = Interface
+NAME = Bureaucrat
 
 CC = c++
 
@@ -8,7 +8,7 @@ SRC = main.cpp Bureaucrat.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD = Bureaucrat.cpp
+HEAD = Bureaucrat.hpp
 
 all : $(NAME)
 
