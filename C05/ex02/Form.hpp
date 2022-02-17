@@ -25,6 +25,7 @@ class Form
 		bool _signed;
 		const int _grade_sign;
 		const int _grade_execute;
+
 	public:
 		Form(void);
 		Form(std::string name, const int grade_sign, const int grade_execute);
