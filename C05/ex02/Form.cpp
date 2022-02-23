@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 11:52:37 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/16 17:08:59 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/23 19:15:20 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ std::string Form::getName() const { return _name ;}
 int Form::getGradeSign() const { return _grade_sign;}
 int Form::getGradeExecute() const { return _grade_execute;}
 bool Form::getSigned() const { return _signed;}
+void Form::setSigned(bool signed_) { _signed = signed_;}
 
 std::ostream &operator<<(std::ostream &out, const Form &c)
 {
@@ -73,4 +74,10 @@ void Form::beSigned(Bureaucrat bureaucrat)
 		_signed = true;
 	else
 		throw GradeTooLowException();
+}
+
+void execute(Bureaucrat const & executor) const
+{
+	(void)executor;
+	this->execute_sub_form();
 }

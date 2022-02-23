@@ -4,11 +4,11 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Bureaucrat.cpp Form.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD = Bureaucrat.hpp Form.hpp
+HEAD = Bureaucrat.hpp Form.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp PresidentialPardonForm.hpp
 
 all : $(NAME)
 
@@ -22,6 +22,7 @@ clean :
 fclean :
 	rm -rf $(OBJ)
 	rm -rf  $(NAME)
+	rm work_shrubbery
 
 re :
 	make fclean
