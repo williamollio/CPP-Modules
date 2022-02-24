@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:01:23 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/24 10:38:59 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 14:19:08 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 #include <iostream>
 #include <fstream>
 
-class ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : public Form
+{
 	private:
 		std::string _target;
 	public:

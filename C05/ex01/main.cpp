@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:09:39 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/16 17:04:57 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 14:14:53 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-	std::cout << "\ncreating a valid form an sign it\n";
+	std::cout << "\ncreating a valid form and sign it\n";
 	Form form = Form("workload", 90, 90);
 	std::cout << form << std::endl;
 	try {
@@ -34,7 +34,7 @@ int main(void)
 	}
 	std::cout << form << std::endl;
 
-	std::cout << "\ntry to sign a form with a to high grade\n";
+	std::cout << "\ntry to sign a form with a grade too high\n";
 	std::cout << newbie << std::endl;
 	Form president = Form("top secret", 1, 1);
 	std::cout << president << std::endl;

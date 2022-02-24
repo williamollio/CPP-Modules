@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 11:52:37 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/24 11:12:31 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 14:22:06 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,6 @@ void Form::execute(Bureaucrat & executor) const
 		throw GradeTooLowException();
 	if (getSigned() == false)
 		throw NotSigned();
-	executor.executeForm(*this);
 	this->execute_sub_form();
+	executor.executeForm(*this);
 }

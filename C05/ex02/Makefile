@@ -1,4 +1,4 @@
-NAME = Form
+NAME = Forms
 
 CC = c++
 

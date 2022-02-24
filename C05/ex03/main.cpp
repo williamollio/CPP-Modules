@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:09:39 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/24 13:37:41 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 14:24:06 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 	try {
 		Intern intern;
 		Form *test;
-		test = intern.makeForm("Shrubbery", "work");
+		test = intern.makeForm("Shrubery", "work");
 		//PresidentialPardonForm test("work");
 		test->setSigned(1);
 		test->execute(buro);
