@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:51:25 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/23 18:37:51 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:07:10 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class Bureaucrat
 		void decrement();
 		void signForm(Form form);
 		Bureaucrat	&operator = (const Bureaucrat &copy);
+		void executeForm(Form const & form);
 	class GradeTooHighException : public std::exception
 	{
 		const char* what() const throw();

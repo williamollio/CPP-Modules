@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:01:20 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/23 19:13:14 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 10:39:44 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator = (const ShrubberyCreatio
 	return (*this);
 }
 
-void ShrubberyCreationForm::execute_sub_form(void)
+void ShrubberyCreationForm::execute_sub_form(void) const
 {
 	std::string name;
 	name = _target + "_shrubbery";

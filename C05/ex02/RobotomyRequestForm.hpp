@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:42:34 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/23 18:43:42 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 10:39:17 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class RobotomyRequestForm : public Form
 		RobotomyRequestForm(std::string target);
 		~RobotomyRequestForm(void);
 		RobotomyRequestForm(const RobotomyRequestForm &copy);
-		void execute_sub_form(void);
+		void execute_sub_form(void) const;
 
 		RobotomyRequestForm	&operator = (const RobotomyRequestForm &copy);
 };

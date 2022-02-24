@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:58:58 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/23 18:59:42 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 10:39:25 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm(std::string target);
 		~PresidentialPardonForm(void);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
-		void execute_sub_form(void);
+		void execute_sub_form(void) const;
 
 		PresidentialPardonForm	&operator = (const PresidentialPardonForm &copy);
 };

@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:01:23 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/23 18:36:55 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 10:38:59 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class ShrubberyCreationForm : public Form {
 		ShrubberyCreationForm(std::string target);
 		~ShrubberyCreationForm(void);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-		void execute_sub_form(void);
+		void execute_sub_form(void) const;
 
 		ShrubberyCreationForm	&operator = (const ShrubberyCreationForm &copy);
 };

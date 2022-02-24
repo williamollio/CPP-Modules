@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 11:52:37 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/23 19:15:20 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:12:31 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ const char* Form::GradeTooLowException::what() const throw()
 	return ("Form : GradeTooLowException");
 }
 
+const char* Form::NotSigned::what() const throw()
+{
+	return ("Form : NotSigned");
+}
+
 std::string Form::getName() const { return _name ;}
 int Form::getGradeSign() const { return _grade_sign;}
 int Form::getGradeExecute() const { return _grade_execute;}
@@ -76,8 +81,12 @@ void Form::beSigned(Bureaucrat bureaucrat)
 		throw GradeTooLowException();
 }
 
-void execute(Bureaucrat const & executor) const
+void Form::execute(Bureaucrat & executor) const
 {
-	(void)executor;
+	if (executor.getGrade() > getGradeExecute())
+		throw GradeTooLowException();
+	if (getSigned() == false)
+		throw NotSigned();
+	executor.executeForm(*this);
 	this->execute_sub_form();
 }

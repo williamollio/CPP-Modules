@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 11:52:44 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/23 19:15:14 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:12:23 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,17 @@ class Form
 		void setSigned(bool signed_);
 		void beSigned(Bureaucrat bureaucrat);
 		Form	&operator = (const Form &copy);
-		virtual void execute_sub_form(void) = 0;
-		void execute(Bureaucrat const & executor) const;
+		virtual void execute_sub_form(void) const = 0;
+		void execute(Bureaucrat & executor) const;
 	class GradeTooHighException : public std::exception
 	{
 		const char* what() const throw();
 	};
 	class GradeTooLowException : public std::exception
+	{
+		const char* what() const throw();
+	};
+	class NotSigned : public std::exception
 	{
 		const char* what() const throw();
 	};

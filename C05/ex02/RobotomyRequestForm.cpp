@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:42:21 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/23 18:57:03 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 10:39:53 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ RobotomyRequestForm	&RobotomyRequestForm::operator = (const RobotomyRequestForm 
 	return (*this);
 }
 
-void RobotomyRequestForm::execute_sub_form(void)
+void RobotomyRequestForm::execute_sub_form(void) const
 {
 	std::cout << "* some drilling noises *" << std::endl;
 	srand(time(NULL));

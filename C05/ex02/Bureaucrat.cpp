@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:51:23 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/16 17:09:55 by wollio           ###   ########.fr       */
+/*   Updated: 2022/02/24 11:09:39 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,11 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
 	return ("GradeTooLowException");
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+	std::cout << getName() << " execute " << form.getName() << std::endl;
 }
 
 void Bureaucrat::signForm(Form form)
