@@ -130,3 +130,8 @@ Derived class objects should be sensible specialisations of base class objects
 ### CPP05
 
 * Exception handling : exceptions are run-time anomalies or abnormal conditions that a program encounters during its execution
+
+### CPP06
+
+* implicit cast : cast a variable type without to specify it
+* explicit cast : int a = 42; double c = (double) a;
