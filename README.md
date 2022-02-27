@@ -1,6 +1,6 @@
 # C++ Modules
 
-## Vocabulary
+## My notes : Vocabulary
 ### CPP00
 
 * <strong>::</strong> scope resolution operator
