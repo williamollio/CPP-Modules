@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/16 11:52:44 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/24 11:12:23 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/08 20:33:58 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Form
 	public:
 		Form(void);
 		Form(std::string name, const int grade_sign, const int grade_execute);
-		~Form(void);
+		virtual ~Form(void);
 		Form(const Form &copy);
 		std::string getName() const;
 		int getGradeSign() const;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/23 18:42:21 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/24 10:39:53 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/08 20:34:46 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 RobotomyRequestForm::RobotomyRequestForm(void) : Form("RobotomyRequestForm", 72, 45), _target("None")
 {
+	srand(time(NULL));
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45), _target(target)
 {
+	srand(time(NULL));
 }
 
 RobotomyRequestForm::~RobotomyRequestForm(void)
@@ -38,7 +40,6 @@ RobotomyRequestForm	&RobotomyRequestForm::operator = (const RobotomyRequestForm 
 void RobotomyRequestForm::execute_sub_form(void) const
 {
 	std::cout << "* some drilling noises *" << std::endl;
-	srand(time(NULL));
 	if (rand() & 1)
 		std::cout << "robotomy failed" << std::endl;
 	else

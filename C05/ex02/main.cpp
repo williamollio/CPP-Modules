@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 16:09:39 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/24 11:13:22 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/08 20:41:56 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,7 @@ int main(void)
 	Bureaucrat buro("buro", 2);
 	try {
 		PresidentialPardonForm test("work");
-		test.setSigned(1);
-		test.execute(buro);
+		buro.executeForm(test);
 	}
 	catch (std::exception & e) {
 		std::cerr << e.what() << std::endl;

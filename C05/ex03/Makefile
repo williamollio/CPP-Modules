@@ -22,7 +22,6 @@ clean :
 fclean :
 	rm -rf $(OBJ)
 	rm -rf  $(NAME)
-	rm work_shrubbery
 
 re :
 	make fclean

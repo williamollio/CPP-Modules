@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 17:51:23 by wollio            #+#    #+#             */
-/*   Updated: 2022/02/24 11:09:39 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/08 20:40:46 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,10 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 void Bureaucrat::executeForm(Form const & form)
 {
 	std::cout << getName() << " execute " << form.getName() << std::endl;
+	form.execute_sub_form();
 }
 
-void Bureaucrat::signForm(Form form)
+void Bureaucrat::signForm(Form &form)
 {
 	if (form.getSigned() == true)
 		std::cout << getName() << "signed " << form.getGradeSign() <<  std::endl;
