@@ -130,8 +130,21 @@ Derived class objects should be sensible specialisations of base class objects
 ### CPP05
 
 * Exception handling : exceptions are run-time anomalies or abnormal conditions that a program encounters during its execution
+* Polymorphism :  The ability of a message to be displayed in more than one form
+  - Compile time : function or operator overloading
+  - Run time : function overriden (with the virtual keyword)
 
 ### CPP06
 
 * implicit cast : cast a variable type without to specify it
 * explicit cast : int a = 42; double c = (double) a;
+* '#' directive :  also called ‘Stringizing Operator’, converts its argument in a string.
+* implict/explicit promotion : attribution of value of a int var to a float var (for example)
+* implict/explicit demotion : attribution of value of a float var to a int var (for example)
+* implict/explicit upcast : attribution of value of a child var to a parent var (for example)
+* implict/explicit downcast : attribution of value of a parent var to a child var (for example)
+* static_cast<type> : is a compile time cast
+* dynamic_cast<type> : is a run time cast, the function has to contain a virtual keyword
+* reinterpret_cast<type> : allow you to do reinterpretation, as well as downcast and upcast
+* const_cast<type> : allow to cast a const var to a non cast one
+* cast operators : operator overloading in the class
