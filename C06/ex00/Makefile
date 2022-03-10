@@ -4,7 +4,7 @@ CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp conversion.cpp
+SRC = main.cpp conversion.cpp is.cpp if.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversion.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:59:52 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/09 15:57:58 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/10 15:46:15 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,47 @@
 
 # include <iostream>
 # include <cstring>
-# include <iostream>
+# include <sstream>
+# include <limits.h>
+# include <ctype.h>
 
 #define PRINT(x) std::cout << #x;
-#define PRINT_NL(x, y) std::cout << #x << #y << std::endl;
+#define PRINT_NL(x) std::cout << #x << std::endl;
 
 enum type
 {
-	CHAR,
-	INT,
-	FLOAT,
-	DOUBLE,
 	MINUS_INFF,
 	PLUS_INFF,
-	PLUS_INF,
+	NANF,
 	MINUS_INF,
-	NAN
+	PLUS_INF,
+	NAN,
+	INT,
+	CHAR,
+	FLOAT,
+	DOUBLE,
+	NOT_VALID
 };
 class conversion
 {
 	private:
-		std::string _input;
 		type _type;
-		char c;
+		std::string _input;
+		bool _overflow;
+		bool _dot;
+		std::string c;
 		int i;
 		float f;
 		double d;
 
+		/* Results */
+		std::string _char;
+		std::string _int;
+		std::string _float;
+		std::string _double;
+
 		void output_values(void);
+
 	public:
 		conversion(void);
 		conversion(char *s);
@@ -51,28 +64,37 @@ class conversion
 		conversion	&operator = (const conversion &copy);
 
 		/* Main function */
-		void convertissor(void) const;
+		void main(void);
+		int convertissor(void);
 
 		/* Look for input type */
 		int ifChar();
 		int ifInt();
 		int ifFloat();
 		int ifDouble();
+		int ifSpecial();
 
 		/* Do the conversions */
 		void isChar();
 		void isInt();
 		void isFloat();
 		void isDouble();
+		int isSpecial();
+
+		/* Tools */
+		int check_is_valid();
+		static type hashit(std::string input);
+		int check_dot();
+		int check_overflow();
 
 		/* Getters */
-		char getChar(void) const;
-		int getInt(void) const;
-		float getFloat(void) const;
-		double getDouble(void) const;
+		std::string getChar(void) const;
+		std::string getInt(void) const;
+		std::string getFloat(void) const;
+		std::string getDouble(void) const;
 };
 
 /* Mandatory */
-std::ostream& operator<< (std::ostream& os, const conversion& convert);
+std::ostream& operator<< (std::ostream& os, conversion& convert);
 
 #endif

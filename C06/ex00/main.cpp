@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
+/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 10:06:11 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/09 15:49:17 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/10 11:46:38 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ int main(int argc, char *argv[])
 {
 	if (check_argc(argc))
 		return (EXIT_FAILURE);
-
-	conversion t(argv[2]);
+	conversion t(argv[1]);
 	std::cout << t;
 	return (EXIT_SUCCESS);
 }
