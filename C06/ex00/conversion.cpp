@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:59:56 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/12 19:52:17 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/12 22:02:54 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,11 +57,6 @@ std::string conversion::getInt(void) const{return _int;}
 std::string conversion::getFloat(void) const{return _float;}
 std::string conversion::getDouble(void) const{return _double;}
 
-
-void conversion::isChar (void)
-{
-
-}
 void conversion::isInt (void)
 {
 	_char = "Non displayable";
@@ -132,10 +127,6 @@ int conversion::ifInt (void)
 	return (EXIT_SUCCESS);
 }
 
-// int conversion::ifChar (void)
-// {
-// 	return (EXIT_SUCCESS);
-// }
 int conversion::ifFloat (void)
 {
 	char s[_input.length() + 1];
@@ -160,7 +151,7 @@ int conversion::ifDouble (void)
 
 int conversion::convertissor(void)
 {
-	if (ifSpecial() || ifValid())
+	if (ifSpecial() || ifChar())
 		return (EXIT_FAILURE);
 	if (!ifInt())
 		isInt();
@@ -168,16 +159,31 @@ int conversion::convertissor(void)
 		isDouble();
 	else if (!ifFloat())
 		isFloat();
-	else
-		isChar();
 	return (EXIT_SUCCESS);
+}
+
+void conversion::ifValid(void)
+{
+	if (_input.length() == 1)
+	{
+		char a[1];
+		strcpy(a, _input.c_str());
+		_char = a;
+		__int = static_cast<int>(a[0]);
+		__float = static_cast<float>(a[0]);
+		__double = static_cast<double>(a[0]);
+		return;
+	}
+	_type = NOT_VALID;
+	return ;
 }
 
 void conversion::main(void)
 {
-	if (convertissor() && this->_type != NOT_VALID && isSpecial())
+	if (convertissor() && this->_type != CHAR && isSpecial())
 		return ;
-
+	if (this->_type == CHAR)
+		ifValid();
 }
 
 type conversion::getType(void) const {return _type;}
@@ -188,6 +194,7 @@ std::ostream& operator<< (std::ostream& os, conversion& convert)
 {
 	convert.main();
 	/*Errors cases*/
+	std::cout << "Type : " << convert.getType() << std::endl;
 	if (convert.getType() <= NAN)
 	{
 		os << "char : " << convert.getChar() << std::endl
@@ -206,15 +213,26 @@ std::ostream& operator<< (std::ostream& os, conversion& convert)
 	{
 		os << "char : " << convert.getChar() << std::endl
 		<< "int : " << convert.get_int() << std::endl
-		<< "float : " << convert.get_float() << ".0f" << std::endl
-		<< "double : " << convert.get_double() << ".0" << std::endl;
+		<< "float : " << convert.get_float() << "f" << std::endl
+		<< "double : " << convert.get_double() << std::endl;
 	}
 	else if (convert.getType() == DOUBLE)
 	{
 		os << "char : " << convert.getChar() << std::endl
 		<< "int : " << convert.get_int() << std::endl
-		<< "float : " << convert.get_float() << ".0f" << std::endl
-		<< "double : " << convert.get_double() << ".0" << std::endl;
+		<< "float : " << convert.get_float() << "f" << std::endl
+		<< "double : " << convert.get_double() << std::endl;
+	}
+	else if (convert.getType() == NOT_VALID)
+	{
+		os << "the input isn't correct " << std::endl;
+	}
+	else if (convert.getType() == CHAR)
+	{
+		os << "char : " << convert.getChar() << std::endl
+		<< "int : " << convert.get_int() << std::endl
+		<< "float : " << convert.get_float() << "f" << std::endl
+		<< "double : " << convert.get_double() << std::endl;
 	}
 	return (os);
 }

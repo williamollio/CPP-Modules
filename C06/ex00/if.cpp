@@ -6,22 +6,21 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 15:43:29 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/03/12 18:31:07 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/12 21:36:33 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "conversion.hpp"
 
-
-int conversion::ifValid()
+int conversion::ifChar(void)
 {
 	char s[_input.length() + 1];
 	strcpy(s, _input.c_str());
 	for (size_t i = 0; i < _input.length(); i++)
 	{
-		if (!isdigit(s[i]) && s[i] != '.' && s[i] != '-')
+		if (!isdigit(s[i]) && s[i] != '.' && s[i] != '-' && s[i] != 'f')
 		{
-			_type = NOT_VALID;
+			_type = CHAR;
 			return (EXIT_FAILURE);
 		}
 	}

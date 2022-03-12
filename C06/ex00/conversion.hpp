@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:59:52 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/12 19:49:33 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/12 21:40:41 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,21 +72,20 @@ class conversion
 		int convertissor(void);
 
 		/* Look for input type */
-		// int ifChar();
+		int ifChar(void);
 		int ifInt();
 		int ifFloat();
 		int ifDouble();
 		int ifSpecial();
 
 		/* Do the conversions */
-		void isChar();
 		void isInt();
 		void isFloat();
 		void isDouble();
 		int isSpecial();
 
 		/* Tools */
-		int ifValid();
+		void ifValid();
 		static type hashit(std::string input);
 		int check_dot();
 		int check_overflow();
