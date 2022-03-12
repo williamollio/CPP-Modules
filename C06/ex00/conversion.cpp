@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:59:56 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/10 15:44:50 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/12 19:52:17 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,15 +64,25 @@ void conversion::isChar (void)
 }
 void conversion::isInt (void)
 {
-
+	_char = "Non displayable";
+	__int = std::stoi(_input);
+	__float = std::stof(_input);
+	__double = std::stod(_input);
 }
+
 void conversion::isFloat (void)
 {
-
+	_char = "Non displayable";
+	__int = std::stoi(_input);
+	__float = std::stof(_input);
+	__double = std::stod(_input);
 }
 void conversion::isDouble (void)
 {
-
+	_char = "Non displayable";
+	__int = std::stoi(_input);
+	__float = std::stof(_input);
+	__double = std::stod(_input);
 }
 
 int conversion::check_dot()
@@ -102,49 +112,64 @@ int conversion::check_overflow()
 	return (EXIT_SUCCESS);
 }
 
-int conversion::ifInt (void)
-{
-	if (check_dot() || check_overflow())
-		return (EXIT_FAILURE);
-	return (EXIT_SUCCESS);
-
-}
-
-int conversion::ifChar (void)
-{
-	return (EXIT_SUCCESS);
-}
-int conversion::ifFloat (void)
-{
-	return (EXIT_SUCCESS);
-
-}
-int conversion::ifDouble (void)
-{
-	return (EXIT_SUCCESS);
-
-}
-int conversion:: check_is_valid()
+int conversion::check_int()
 {
 	char s[_input.length() + 1];
 	strcpy(s, _input.c_str());
 	for (size_t i = 0; i < _input.length(); i++)
-	{
-		if (!isdigit(s[i]) && s[i] != '.' && s[i] != '-')
-		{
-			_type = NOT_VALID;
+		if (!isdigit(s[i]) && s[i] != '-')
 			return (EXIT_FAILURE);
-		}
-	}
+	return (EXIT_SUCCESS);
+}
+
+int conversion::ifInt (void)
+{
+	if (check_dot() || check_overflow())
+		return (EXIT_FAILURE);
+	else if (check_int())
+		return (EXIT_FAILURE);
+	_type = INT;
+	return (EXIT_SUCCESS);
+}
+
+// int conversion::ifChar (void)
+// {
+// 	return (EXIT_SUCCESS);
+// }
+int conversion::ifFloat (void)
+{
+	char s[_input.length() + 1];
+	strcpy(s, _input.c_str());
+	for (size_t i = 0; i < _input.length(); i++)
+		if (!isdigit(s[i]) && s[i] != '-' && s[i] != '.' && s[i] != 'f')
+			return (EXIT_FAILURE);
+	_type = FLOAT;
+	return (EXIT_SUCCESS);
+}
+
+int conversion::ifDouble (void)
+{
+	char s[_input.length() + 1];
+	strcpy(s, _input.c_str());
+	for (size_t i = 0; i < _input.length(); i++)
+		if (!isdigit(s[i]) && s[i] != '-' && s[i] != '.')
+			return (EXIT_FAILURE);
+	_type = DOUBLE;
 	return (EXIT_SUCCESS);
 }
 
 int conversion::convertissor(void)
 {
-	if (ifSpecial() || check_is_valid())
+	if (ifSpecial() || ifValid())
 		return (EXIT_FAILURE);
-	if (ifInt())
+	if (!ifInt())
 		isInt();
+	else if (!ifDouble())
+		isDouble();
+	else if (!ifFloat())
+		isFloat();
+	else
+		isChar();
 	return (EXIT_SUCCESS);
 }
 
@@ -155,13 +180,41 @@ void conversion::main(void)
 
 }
 
+type conversion::getType(void) const {return _type;}
+int conversion::get_int(void) const {return __int;}
+double conversion::get_double(void) const {return __float;}
+float conversion::get_float(void) const {return __double;}
 std::ostream& operator<< (std::ostream& os, conversion& convert)
 {
 	convert.main();
-	os << "char : " << convert.getChar() << std::endl
-	<< "int : " << convert.getInt() << std::endl
-	<< "float : " << convert.getFloat() << std::endl
-	<< "double : " << convert.getDouble() << std::endl;
-
+	/*Errors cases*/
+	if (convert.getType() <= NAN)
+	{
+		os << "char : " << convert.getChar() << std::endl
+		<< "int : " << convert.getInt() << std::endl
+		<< "float : " << convert.getFloat() << std::endl
+		<< "double : " << convert.getDouble() << std::endl;
+	}
+	else if (convert.getType() == INT)
+	{
+		os << "char : " << convert.getChar() << std::endl
+		<< "int : " << convert.get_int() << std::endl
+		<< "float : " << convert.get_float() << ".0f" << std::endl
+		<< "double : " << convert.get_double() << ".0" << std::endl;
+	}
+	else if (convert.getType() == FLOAT)
+	{
+		os << "char : " << convert.getChar() << std::endl
+		<< "int : " << convert.get_int() << std::endl
+		<< "float : " << convert.get_float() << ".0f" << std::endl
+		<< "double : " << convert.get_double() << ".0" << std::endl;
+	}
+	else if (convert.getType() == DOUBLE)
+	{
+		os << "char : " << convert.getChar() << std::endl
+		<< "int : " << convert.get_int() << std::endl
+		<< "float : " << convert.get_float() << ".0f" << std::endl
+		<< "double : " << convert.get_double() << ".0" << std::endl;
+	}
 	return (os);
 }

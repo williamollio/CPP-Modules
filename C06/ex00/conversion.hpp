@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:59:52 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/10 15:46:15 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/12 19:49:33 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ class conversion
 
 		/* Results */
 		std::string _char;
+		int __int;
+		float __float;
+		double __double;
+		/* Results errors*/
 		std::string _int;
 		std::string _float;
 		std::string _double;
@@ -68,7 +72,7 @@ class conversion
 		int convertissor(void);
 
 		/* Look for input type */
-		int ifChar();
+		// int ifChar();
 		int ifInt();
 		int ifFloat();
 		int ifDouble();
@@ -82,16 +86,21 @@ class conversion
 		int isSpecial();
 
 		/* Tools */
-		int check_is_valid();
+		int ifValid();
 		static type hashit(std::string input);
 		int check_dot();
 		int check_overflow();
+		int check_int();
 
 		/* Getters */
 		std::string getChar(void) const;
 		std::string getInt(void) const;
 		std::string getFloat(void) const;
 		std::string getDouble(void) const;
+		type getType(void) const;
+		int get_int(void) const;
+		float get_float(void) const;
+		double get_double(void) const;
 };
 
 /* Mandatory */

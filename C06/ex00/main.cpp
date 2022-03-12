@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 10:06:11 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/10 11:46:38 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/12 18:27:35 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int check_argc(int argc)
 	}
 	return (EXIT_SUCCESS);
 }
+
+/* try catch */
 
 int main(int argc, char *argv[])
 {
