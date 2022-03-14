@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:59:56 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/12 22:02:54 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/14 13:27:30 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,6 @@ conversion	&conversion::operator = (const conversion &copy)
 	return (*this);
 }
 
-/* Not tested */
-void conversion::output_values(void)
-{
-}
-
 std::string conversion::getChar(void) const{return _char;}
 std::string conversion::getInt(void) const{return _int;}
 std::string conversion::getFloat(void) const{return _float;}
@@ -59,8 +54,11 @@ std::string conversion::getDouble(void) const{return _double;}
 
 void conversion::isInt (void)
 {
-	_char = "Non displayable";
 	__int = std::stoi(_input);
+	if (__int >= 32 && __int < 127)
+		_char = __int;
+	else
+		_char = "Non displayable";
 	__float = std::stof(_input);
 	__double = std::stod(_input);
 }
@@ -101,7 +99,7 @@ int conversion::check_overflow()
 	ss >> nbr;
 	if (nbr > INT32_MAX || nbr < INT32_MIN)
 	{
-		_overflow = true;
+		_type = NOT_VALID;
 		return (EXIT_FAILURE);
 	}
 	return (EXIT_SUCCESS);
@@ -119,7 +117,7 @@ int conversion::check_int()
 
 int conversion::ifInt (void)
 {
-	if (check_dot() || check_overflow())
+	if (check_dot())
 		return (EXIT_FAILURE);
 	else if (check_int())
 		return (EXIT_FAILURE);
@@ -132,7 +130,7 @@ int conversion::ifFloat (void)
 	char s[_input.length() + 1];
 	strcpy(s, _input.c_str());
 	for (size_t i = 0; i < _input.length(); i++)
-		if (!isdigit(s[i]) && s[i] != '-' && s[i] != '.' && s[i] != 'f')
+		if (!isdigit(s[i]) && s[i] != '-' && s[i] != '.' && (s[i] != 'f' || i == 0))
 			return (EXIT_FAILURE);
 	_type = FLOAT;
 	return (EXIT_SUCCESS);
@@ -151,7 +149,7 @@ int conversion::ifDouble (void)
 
 int conversion::convertissor(void)
 {
-	if (ifSpecial() || ifChar())
+	if (ifSpecial() || ifChar() || check_overflow())
 		return (EXIT_FAILURE);
 	if (!ifInt())
 		isInt();
@@ -159,6 +157,8 @@ int conversion::convertissor(void)
 		isDouble();
 	else if (!ifFloat())
 		isFloat();
+	else
+		_type = CHAR;
 	return (EXIT_SUCCESS);
 }
 
@@ -193,8 +193,7 @@ float conversion::get_float(void) const {return __double;}
 std::ostream& operator<< (std::ostream& os, conversion& convert)
 {
 	convert.main();
-	/*Errors cases*/
-	std::cout << "Type : " << convert.getType() << std::endl;
+	/* Display when special cases*/
 	if (convert.getType() <= NAN)
 	{
 		os << "char : " << convert.getChar() << std::endl
@@ -202,6 +201,7 @@ std::ostream& operator<< (std::ostream& os, conversion& convert)
 		<< "float : " << convert.getFloat() << std::endl
 		<< "double : " << convert.getDouble() << std::endl;
 	}
+	/* Display for different types */
 	else if (convert.getType() == INT)
 	{
 		os << "char : " << convert.getChar() << std::endl

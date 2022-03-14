@@ -6,7 +6,7 @@
 /*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:59:52 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/12 21:40:41 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/14 13:19:37 by wiliamollio      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ class conversion
 		std::string _int;
 		std::string _float;
 		std::string _double;
-
-		void output_values(void);
 
 	public:
 		conversion(void);
