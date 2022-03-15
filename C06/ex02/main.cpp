@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 21:22:30 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/03/15 11:13:09 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/15 13:07:09 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ int main(void)
 	Base *p = generate();
 	identify(p);
 	identify(*p);
+	delete p;
 	return (EXIT_SUCCESS);
 }

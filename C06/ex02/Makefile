@@ -1,4 +1,4 @@
-NAME = serialization
+NAME = identify
 
 CC = c++
 
