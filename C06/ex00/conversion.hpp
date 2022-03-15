@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversion.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:59:52 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/14 13:19:37 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/15 11:18:28 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ class conversion
 	private:
 		type _type;
 		std::string _input;
-		bool _overflow;
 		bool _dot;
 		std::string c;
 		int i;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   conversion.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 13:59:56 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/14 13:27:30 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/15 11:19:34 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ conversion::conversion(void)
 {
 	_type = (type)INT32_MAX;
 	_input = "";
-	_overflow = false;
 	c = 'c';
 	i = 0;
 	d = (double) 0;
@@ -26,16 +25,15 @@ conversion::conversion(char *s)
 {
 	_type = (type)INT32_MAX;
 	_input = s;
-	_overflow = false;
 	c = 'c';
 	i = 0;
 	d = (double) 0;
 	f = (float) 0;
 
-	_char = "not done yet";
-	_int = "not done yet";
-	_float = "not done yet";
-	_double = "not done yet";
+	_char = "";
+	_int = "";
+	_float = "";
+	_double = "";
 }
 conversion::conversion(const conversion &copy) { *this = copy; }
 conversion::~conversion(void) {}
@@ -223,16 +221,16 @@ std::ostream& operator<< (std::ostream& os, conversion& convert)
 		<< "float : " << convert.get_float() << "f" << std::endl
 		<< "double : " << convert.get_double() << std::endl;
 	}
-	else if (convert.getType() == NOT_VALID)
-	{
-		os << "the input isn't correct " << std::endl;
-	}
 	else if (convert.getType() == CHAR)
 	{
 		os << "char : " << convert.getChar() << std::endl
 		<< "int : " << convert.get_int() << std::endl
 		<< "float : " << convert.get_float() << "f" << std::endl
 		<< "double : " << convert.get_double() << std::endl;
+	}
+	else if (convert.getType() == NOT_VALID)
+	{
+		os << "the input isn't correct " << std::endl;
 	}
 	return (os);
 }
