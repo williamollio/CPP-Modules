@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/14 21:01:07 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/03/14 21:21:48 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/15 10:58:01 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@
 #include "Base.hpp"
 
 class A : public Base {
-	private :
-	std::string _type;
 
-	public :
-	A::A() {_type = "";}
-	std::string getType(void) {return _type;}
 };
 #endif
