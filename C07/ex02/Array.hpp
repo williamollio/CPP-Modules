@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:06:16 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/03/15 22:19:29 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/18 21:30:38 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,24 @@ class Array {
 
 	public:
 	Array(void);
+	Array(unsigned int n);
 
 };
 
 template <typename T>
 Array<T>::Array(void)
 {
-		T a[0];
-		(void)a;
-		std::cout << "Constructor called" << std::endl;
+	T a[0];
+	(void)a;
+	std::cout << "Default constructor called" << std::endl;
+}
+
+template <typename T>
+Array<T>::Array(unsigned int n)
+{
+	int a[n];
+	for (unsigned int i = 0; i < n; i++)
+		a[i] = NULL;
+	std::cout << "Parameterized constructor called" << std::endl;
 }
 #endif
