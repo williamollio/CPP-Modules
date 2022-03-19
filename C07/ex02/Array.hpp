@@ -6,12 +6,14 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:06:16 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/03/19 16:50:06 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/19 22:10:16 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
+
+#define P(x) std::cout << #x << std::endl;
 
 #include <iostream>
 
@@ -19,51 +21,57 @@ template <typename T>
 class Array {
 	private :
 		T *array;
-		unsigned int size;
+		unsigned int sizeArray;
+		int cop;
 
 	public:
 	void setArray(T value, unsigned int index) {this->array[index] = value;}
-	unsigned int getSize(void) const {return (size);}
+	unsigned int size(void) const {return (sizeArray);}
 	T getValueArray(unsigned int index) {return (array[index]);}
 
 	Array(void)
 	{
+		cop = 0;
 		array = new T[0];
-		std::cout << "Default constructor called" << std::endl;
 	}
-
-	Array(unsigned int n) : size(n)
+	~Array() { delete [] this->array; }
+	Array(unsigned int n) : sizeArray(n)
 	{
-		array = new T[size];
-		std::cout << "Parameterized constructor called" << std::endl;
+		cop = 0;
+		array = new T[sizeArray];
 	}
 
 	Array(const Array &value)
 	{
+		cop = 1;
 		*this = value;
-		std::cout << "Copy constructor" << std::endl;
 	}
 
 	Array& operator=(Array const & value)
 	{
-		if (this->array)
+		if (cop != 1)
 			delete this->array;
-		this->size = value.size;
-		this->array = new T[size];
-		for (unsigned int i = 0; i < size; i++)
+		this->sizeArray = value.sizeArray;
+		this->array = new T[sizeArray];
+		for (unsigned int i = 0; i < sizeArray; i++)
 			(this->array)[i] = (value.array)[i];
-		std::cout << "Assignment operator called " << std::endl;
 		return *this;
 	}
-};
 
-/* ?? */
-template <typename T>
-std::ostream	&operator<<( std::ostream &o, const Array<T> &array )
-{
-	for (unsigned int i = 0; i < array.getSize(); i++)
-		o << array[i] << std::endl;
-	return o;
-}
+	/* Subscript operator */
+	T& operator[](unsigned int index)
+	{
+		if (index >= sizeArray || index < 0)
+			throw OutOfBounds();
+		return array[index];
+	}
+	class OutOfBounds : public std::exception
+	{
+		public:
+			virtual const char* what() const throw() {
+				return "OutOfBoundsError";
+			}
+	};
+};
 
 #endif
