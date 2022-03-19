@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:06:16 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/03/18 21:30:38 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/19 16:50:06 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,52 @@
 template <typename T>
 class Array {
 	private :
+		T *array;
+		unsigned int size;
 
 	public:
-	Array(void);
-	Array(unsigned int n);
+	void setArray(T value, unsigned int index) {this->array[index] = value;}
+	unsigned int getSize(void) const {return (size);}
+	T getValueArray(unsigned int index) {return (array[index]);}
 
+	Array(void)
+	{
+		array = new T[0];
+		std::cout << "Default constructor called" << std::endl;
+	}
+
+	Array(unsigned int n) : size(n)
+	{
+		array = new T[size];
+		std::cout << "Parameterized constructor called" << std::endl;
+	}
+
+	Array(const Array &value)
+	{
+		*this = value;
+		std::cout << "Copy constructor" << std::endl;
+	}
+
+	Array& operator=(Array const & value)
+	{
+		if (this->array)
+			delete this->array;
+		this->size = value.size;
+		this->array = new T[size];
+		for (unsigned int i = 0; i < size; i++)
+			(this->array)[i] = (value.array)[i];
+		std::cout << "Assignment operator called " << std::endl;
+		return *this;
+	}
 };
 
+/* ?? */
 template <typename T>
-Array<T>::Array(void)
+std::ostream	&operator<<( std::ostream &o, const Array<T> &array )
 {
-	T a[0];
-	(void)a;
-	std::cout << "Default constructor called" << std::endl;
+	for (unsigned int i = 0; i < array.getSize(); i++)
+		o << array[i] << std::endl;
+	return o;
 }
 
-template <typename T>
-Array<T>::Array(unsigned int n)
-{
-	int a[n];
-	for (unsigned int i = 0; i < n; i++)
-		a[i] = NULL;
-	std::cout << "Parameterized constructor called" << std::endl;
-}
 #endif
