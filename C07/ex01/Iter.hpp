@@ -8,6 +8,7 @@ void print_el(T &el)
 {
 	std::cout << el << std::endl;
 }
+
 template <typename T>
 void iter(T *address, const int length, void function (T &el))
 {

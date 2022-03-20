@@ -8,7 +8,7 @@ SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-HEAD =
+HEAD = Iter.hpp
 
 all : $(NAME)
 
