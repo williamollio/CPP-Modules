@@ -6,7 +6,7 @@
 /*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 22:06:49 by wiliamollio       #+#    #+#             */
-/*   Updated: 2022/03/19 22:23:59 by wollio           ###   ########.fr       */
+/*   Updated: 2022/03/21 00:21:13 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@ int main(void)
 	try
 	{
 		P(FIRST)
-		Array<unsigned int> a(5);
-		for (unsigned int i = 0; i < 5; i++)
+		Array<unsigned int> a(6);
+		for (unsigned int i = 0; i < 6; i++)
 			a.setArray(i, i);
 
 		unsigned int value = 5;
 		std::cout << "Use of subscript operator at index "<< value << " : "<< a[value] << std::endl;
+		a[value] = 99;
+		std::cout << "Set a["<< value << "] to : " << a[value] << std::endl;
 	}
 	catch(const std::exception& e)
 	{
