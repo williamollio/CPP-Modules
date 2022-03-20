@@ -148,3 +148,7 @@ Derived class objects should be sensible specialisations of base class objects
 * reinterpret_cast<type> : allow you to do reinterpretation, as well as downcast and upcast
 * const_cast<type> : allow to cast a const var to a non cast one
 * cast operators : operator overloading in the class
+
+### CPP07
+
+* non type parameter in template : ex. template <int x>
