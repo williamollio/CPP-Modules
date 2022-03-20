@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Span.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wiliamollio <wiliamollio@student.42.fr>    +#+  +:+       +#+        */
+/*   By: wollio <wollio@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 19:59:26 by wollio            #+#    #+#             */
-/*   Updated: 2022/03/20 21:34:07 by wiliamollio      ###   ########.fr       */
+/*   Updated: 2022/03/20 22:56:17 by wollio           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 class Span
 {
@@ -26,15 +27,14 @@ class Span
 	public :
 	Span(unsigned int n);
 	void addNumber(int nbr);
-	int shortestSpan(int nbr);
-	int longestSpan(int nbr);
-	int ft_begin();
-	int ft_end();
-	class TooMuch : public std::exception
+	void addNumber(int nbr, int max, int min);
+	int shortestSpan();
+	int longestSpan();
+	class TooMuchNumberAdded : public std::exception
 	{
 		virtual const char *what() const throw();
 	};
-	class NotFound : public std::exception
+	class SizeTooSmall : public std::exception
 	{
 		virtual const char *what() const throw();
 	};
