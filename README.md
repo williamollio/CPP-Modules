@@ -4,6 +4,7 @@
 
 The goal of this project is to introduce us [C++](https://en.wikipedia.org/wiki/C%2B%2B) and the [Object Oriented Programming](https://en.wikipedia.org/wiki/Object-oriented_programming).
 
+Here is [my notes on the new vocabulary](https://github.com/williamollio/CPP-Modules/blob/master/vocab.txt)
 Version : C++98
 
 # Explanations
