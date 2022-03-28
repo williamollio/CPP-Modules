@@ -2,4 +2,4 @@ OrthodoxCanonicalClassFormCreator/
 *.o
 fixed
 .DS_Store
-.vscode
+.vscode.gitignore
