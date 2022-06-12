@@ -91,20 +91,22 @@ Derived class objects should be sensible specialisations of base class objects
 * Virtual base class : specify to the compiler that the base shouldn't be duplicate
 
 - With virtual keyword
+```
     A
   /   \
  B     C
   \   /
     D
+```
 
 - Without virtual keyword
-
+```
   A   A
   |   |
   B   C
    \ /
     D
-
+```
 ### CPP04
 
 * declaration of a function : write prototype of a function in a class
