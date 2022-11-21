@@ -1,1 +1,70 @@
-<mxfile host="app.diagrams.net" modified="2022-11-21T18:14:05.794Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15" etag="YNZIL5BRofdYEf5oM3W2" version="20.5.3" type="github"><diagram id="0Oow-4XgBfVTjcm3VXhJ" name="Page-1">7Vnfb5swEP5rkNaHTvwIkDymabN2WtVK3dbHygUnWALMbFOS/fU7BwMhGCXpmjZb+5Lg8/mM77v7fJcYziRZfGEoi65piGPDNsOF4Zwbtm3ZoyF8ScmylAwHdimYMxIqpUZwR35jJTSVNCch5i1FQWksSNYWBjRNcSBaMsQYLdpqMxq3d83QHHcEdwGKu9J7EopIncL2G/klJvOo2tnyRuVMgipldRIeoZAWayLnwnAmjFJRPiWLCY6l8yq/lOumPbP1izGcil0WsMy/9x4upzem+3CTCeTfPk5OlZUnFOfqwIbtxWDv7BEe5vJhnIsItiAzEiBBaFopwE61Tr2IVZJTsCqhNr/ROYE15k+CC72aPR3DECUZjNNHLr9K5ZXXxLKCooiIwHcZCuS4gHADxUgkMYwseEQ8KwNgRhY4XL3U6miYCbzo9ZlVIwEhjGmCBVuCilrgKuyW7WHRRIJVwRutR0ElRCr65rXlBiB4UBjtgZd9SLy+3n+HT8OZ6qcDmiR5WlsFL4ATFMrj2yv4/JQhzjPKRGnm5AghdEwNho4OQ+dQGDoaDDf8hNNwLMkLRilNcdtLjOZpKN1zbtYuwmGHxrY6aM0DrsYBlYzhGBB/apvXOUXtcEtJKhr/O4OW/+3Bhls5zVmA1aJ1+tqw44+2GBKIzbHoGFpBVJ/6+agNtmdedfv94JjtnnWwq1aeogTrZyLEI8Bfgsx5QVmPAS6QyLl+bsYIxBiXOQv7u2eGe36i1yxI2mMjppzjvjkUhtIJZoyfpE90OiiICMwmEKe8mwFxDFe8jPw34AyrzRneQMMZQx1nDA/FGe575gzXeyHO6Bg6MGd4e6EWxJDOJAB8IHOZ6Ir/WTwtc/TZbbP36JmQdk11ku7AoPofoCokNlhys+jdHdK2ocEr3+yj7Tf7LaMzAuja5lU6o7vf7f13eEYCkbOeyeZ2ZvhXjrnYphaTPp2+IuAiJKLuykzpU9tsTnks/ZftH1sDZumq975o2TVMGLyaLIXgMV/VjmaIBOqprFZQm3SmlLul0xHgdARdlrVfyfQf87TXU83uy9OO9bY8bQ0/EC2BsF+snOqaeu1yqmLqXRrraySC6O87612aU2h705UO9Mc9nTEPaN8Froi51VwfU4MLuauv3db52tfxtX8ovrZ1P0W/y+x22gnpmc/NbWewkdsvx9gwbP65KNWb/3+ciz8=</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-11-21T19:47:26.083Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.1 Safari/605.1.15" etag="8P2oomIaW8pLWqafFDn1" version="20.5.3" type="github">
+  <diagram id="0Oow-4XgBfVTjcm3VXhJ" name="Page-1">
+    <mxGraphModel dx="1298" dy="842" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rp7W6_HFO05_Opta7PbC-1" value="&lt;b&gt;Authentification&lt;/b&gt;&lt;br&gt;- 42 Login View&lt;br&gt;- 2FA&amp;nbsp;View" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="50" y="50" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-2" value="&lt;b&gt;Authentification&lt;/b&gt;&lt;br&gt;- JWT ?&lt;br&gt;- communication with 42 API (passport ?)" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="50" y="300" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-3" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="34" y="240" as="sourcePoint" />
+            <mxPoint x="794" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-4" value="&lt;b&gt;Model User&lt;/b&gt;&lt;br&gt;- id&lt;br&gt;- name&lt;br&gt;- hashed password&lt;br&gt;- status&lt;br&gt;- friends (id[])&lt;br&gt;- wins&lt;br&gt;- losses&lt;br&gt;- ladder level&lt;br&gt;- achievements" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="10" y="640" width="180" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-5" value="" style="endArrow=none;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="34" y="560" as="sourcePoint" />
+            <mxPoint x="794" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-6" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="109.5" y="290" as="sourcePoint" />
+            <mxPoint x="109.5" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-7" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="100" y="620" as="sourcePoint" />
+            <mxPoint x="100" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-9" value="&lt;b&gt;Profile Info&lt;/b&gt;&lt;br&gt;- name&lt;br&gt;- picture&lt;br&gt;- friends request&lt;br&gt;- friends list&lt;br&gt;- status&lt;br&gt;Edit View / Profile View" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="270" y="50" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-13" value="&lt;b&gt;Profile&lt;/b&gt;&lt;br&gt;- retrieve user data&lt;br&gt;- list of users" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="270" y="300" width="130" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-15" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160" y="640" as="sourcePoint" />
+            <mxPoint x="310" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-18" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="329.5" y="290" as="sourcePoint" />
+            <mxPoint x="329.5" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-20" value="&lt;b&gt;Model Match&lt;/b&gt;&lt;br&gt;- id&lt;br&gt;- ladder level&lt;br&gt;- winner (id)&lt;br&gt;- score&lt;br&gt;- users (id[])" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="244" y="620" width="170" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="rp7W6_HFO05_Opta7PbC-21" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="335" y="600" as="sourcePoint" />
+            <mxPoint x="334.5" y="440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
